@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'motion/react'
 
-export function ColourfulText({ text }: { text: string }) {
+export default function ColourfulText({ text }: { text: string }) {
   const colors = [
     'rgb(131, 179, 32)',
     'rgb(47, 195, 106)',
