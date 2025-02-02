@@ -1,3 +1,4 @@
+import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Hero />
       <Introduction />
+      <Features />
     </>
   )
 }
