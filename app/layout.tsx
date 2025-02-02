@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Rethink_Sans } from 'next/font/google'
+import { Archivo } from 'next/font/google'
 import './globals.css'
 import Nav from '~components/nav'
 
-const rethink = Rethink_Sans({
+const archivo = Archivo({
   weight: ['400'],
   subsets: ['latin'],
   display: 'swap',
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${rethink.className} antialiased`}>
+      <body className={`${archivo.className} antialiased`}>
         <Nav />
         {children}
       </body>

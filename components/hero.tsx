@@ -7,7 +7,7 @@ import hero from '~public/images/hero.jpg'
 export default function Hero() {
   return (
     <>
-      <div className='h-screen-1/2 w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
+      <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
         <div>
           <motion.img
             src={hero.src}
@@ -16,7 +16,7 @@ export default function Hero() {
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1 }}
           />
-          <h1 className='max-w-5xl text-2xl md:text-5xl text-center text-white relative z-2'>
+          <h1 className='max-w-5xl text-2xl md:text-5xl lg:text-6xl text-center text-white relative z-2'>
             Empowering and <span className='font-extrabold'><ColourfulText text='Elevating' /></span> <br /> Counseling
             Standards in Thailand
           </h1>
