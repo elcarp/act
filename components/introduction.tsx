@@ -7,7 +7,7 @@ import counseling2 from '~public/images/counseling2.jpg'
 
 export default function Introduction() {
   return (
-    <section className='py-20 bg-teal-900'>
+    <section className='py-20 gradient-background'>
       <div className='max-w-2xl mx-auto'>
         <p className='text-white text-center pb-20'>
           Welcome to the Accredited Counselors of Thailand (ACT), where we
