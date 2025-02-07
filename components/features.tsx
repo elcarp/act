@@ -4,6 +4,9 @@ import { cn } from '~lib/utils'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import credibility from '~public/images/image1.jpg'
+import opportunities from '~public/images/opportunities.jpg'
+import benefits from '~public/images/image3.jpg'
 
 export default function Features() {
   return (
@@ -40,7 +43,7 @@ const items = [
       'Gain recognition and trust from clients and peers in the counseling community internationally..',
     header: (
       <Image
-        src='https://assets.aceternity.com/pro/bento-1.png'
+        src={credibility.src}
         alt='Bento grid 1'
         width={500}
         height={500}
@@ -55,7 +58,7 @@ const items = [
       'Access a wide range of new opportunities both in Thailand and across borders by enhancing your credibility.',
     header: (
       <Image
-        src='https://assets.aceternity.com/pro/bento-2.png'
+        src={opportunities.src}
         alt='Bento grid 2'
         width={500}
         height={500}
@@ -69,7 +72,7 @@ const items = [
       'Membership provides exclusive access to resources and networking opportunities.',
     header: (
       <Image
-        src='https://assets.aceternity.com/pro/bento-4.png'
+        src={benefits.src}
         alt='Bento grid 3'
         width={500}
         height={500}

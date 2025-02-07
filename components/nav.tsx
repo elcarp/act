@@ -8,7 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
-import { nav } from 'motion/react-client'
 export default function Nav() {
   return <Navbar />
 }
@@ -90,22 +89,32 @@ const DesktopNav = ({ navItems }: any) => {
       <Logo />
       <div className='lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200'>
         <Menu setActive={setActive}>
-          {navItems.map((navItem: any, idx: number) => {
+          {navItems.map((navItem: any) => {
             return (
-              <>
-                {' '}
-                <MenuItem
-                  setActive={setActive}
-                  active={active}
-                  item={navItem.name}>
-                  <div className='flex flex-col space-y-4 text-sm'>
-                    {navItem.children &&
-                      navItem.children.map(({ name, link }: { name: string; link: string }) => {
-                        return <HoveredLink href={link}>{name}</HoveredLink>
-                      })}
-                  </div>
-                </MenuItem>
-              </>
+              <MenuItem
+                key={navItem.name}
+                setActive={setActive}
+                active={active}
+                item={navItem.name}>
+                <div className='flex flex-col space-y-4 text-sm'>
+                  {navItem.children &&
+                    navItem.children.map(
+                      ({
+                        name,
+                        link,
+                      }: {
+                        name: string
+                        link: string
+                      }) => {
+                        return (
+                          <HoveredLink key={name} href={link}>
+                            {name}
+                          </HoveredLink>
+                        )
+                      }
+                    )}
+                </div>
+              </MenuItem>
             )
           })}
           {/* <MenuItem setActive={setActive} active={active} item='About the ACT'>
