@@ -78,7 +78,9 @@ const Navbar = () => {
   )
 }
 
-const DesktopNav = ({ navItems }: any) => {
+const DesktopNav = ({ 
+  // navItems
+ }: any) => {
   const [active, setActive] = useState<string | null>(null)
   return (
     <motion.div
