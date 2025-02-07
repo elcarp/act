@@ -81,11 +81,11 @@ const MEMBERSHIP = [
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum2',
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum3',
     href: '#',
   },
 ]
@@ -96,11 +96,11 @@ const ABOUT_ACT = [
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum2',
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum3',
     href: '#',
   },
 ]
@@ -111,11 +111,11 @@ const CONTACT = [
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum2',
     href: '#',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Lorem ipsum3',
     href: '#',
   },
 ]
