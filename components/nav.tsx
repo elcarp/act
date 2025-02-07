@@ -23,15 +23,15 @@ const Navbar = () => {
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum2',
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum3',
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum4',
           link: '#',
         },
       ],
@@ -45,7 +45,7 @@ const Navbar = () => {
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum2',
           link: '#',
         },
       ],
@@ -59,11 +59,11 @@ const Navbar = () => {
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum2',
           link: '#',
         },
         {
-          name: 'Lorem ipsum',
+          name: 'Lorem ipsum3',
           link: '#',
         },
       ],
