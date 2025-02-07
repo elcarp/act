@@ -8,10 +8,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
+import { nav } from 'motion/react-client'
 export default function Nav() {
-  return (
-      <Navbar />
-  )
+  return <Navbar />
 }
 
 const Navbar = () => {
@@ -21,19 +20,19 @@ const Navbar = () => {
       link: '#',
       children: [
         {
-          name: 'Web Development',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Interface Design',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Search Engine Optimization',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Branding',
+          name: 'Lorem ipsum',
           link: '#',
         },
       ],
@@ -43,11 +42,11 @@ const Navbar = () => {
       link: '#',
       children: [
         {
-          name: 'Algochurn',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Tailwind Master Kit',
+          name: 'Lorem ipsum',
           link: '#',
         },
       ],
@@ -57,15 +56,15 @@ const Navbar = () => {
       link: '#',
       children: [
         {
-          name: 'Hobby',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Individual',
+          name: 'Lorem ipsum',
           link: '#',
         },
         {
-          name: 'Team',
+          name: 'Lorem ipsum',
           link: '#',
         },
       ],
@@ -80,9 +79,7 @@ const Navbar = () => {
   )
 }
 
-const DesktopNav = ({ 
-  // navItems
- }: any) => {
+const DesktopNav = ({ navItems }: any) => {
   const [active, setActive] = useState<string | null>(null)
   return (
     <motion.div
@@ -93,15 +90,33 @@ const DesktopNav = ({
       <Logo />
       <div className='lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200'>
         <Menu setActive={setActive}>
-          <MenuItem setActive={setActive} active={active} item='About the ACT'>
+          {navItems.map((navItem: any, idx: number) => {
+            return (
+              <>
+                {' '}
+                <MenuItem
+                  setActive={setActive}
+                  active={active}
+                  item={navItem.name}>
+                  <div className='flex flex-col space-y-4 text-sm'>
+                    {navItem.children &&
+                      navItem.children.map(({ name, link }: { name: string; link: string }) => {
+                        return <HoveredLink href={link}>{name}</HoveredLink>
+                      })}
+                  </div>
+                </MenuItem>
+              </>
+            )
+          })}
+          {/* <MenuItem setActive={setActive} active={active} item='About the ACT'>
             <div className='flex flex-col space-y-4 text-sm'>
               <HoveredLink href='/#'>Web Development</HoveredLink>
               <HoveredLink href='/#'>Interface Design</HoveredLink>
               <HoveredLink href='/seo'>Search Engine Optimization</HoveredLink>
               <HoveredLink href='/branding'>Branding</HoveredLink>
             </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item='ACT Membership Benefits'>
+          </MenuItem> */}
+          {/* <MenuItem setActive={setActive} active={active} item='ACT Membership Benefits'>
             <div className='  text-sm grid grid-cols-2 gap-10 p-4'>
               <ProductItem
                 title='Algochurn'
@@ -124,7 +139,7 @@ const DesktopNav = ({
               <HoveredLink href='/team'>Team</HoveredLink>
               <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
             </div>
-          </MenuItem>
+          </MenuItem> */}
         </Menu>
       </div>
       <button className='hidden md:block px-8 py-2 text-sm font-bold rounded-lg bg-teal-500 dark:bg-white dark:text-black  text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]'>
