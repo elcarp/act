@@ -4,7 +4,6 @@ import './globals.css'
 import Nav from '~components/nav'
 import Footer from '~components/footer'
 import { locales } from '~config/i18n'
-import type { LayoutProps as NextLayoutProps } from '~/.next/types/app/[lang]/layout'
 
 const archivo = Archivo({
   weight: ['400'],
@@ -16,33 +15,21 @@ export const metadata: Metadata = {
   title: 'ACT',
   description: 'ACT Thailand',
 }
-
-type Params = {
-  lang: string
+// Define the correct type for the layout props
+type LayoutProps = {
+  children: React.ReactNode
+  params: Params
 }
 
-// Extend the Next.js generated LayoutProps
-interface LayoutProps extends Omit<NextLayoutProps, 'params'> {
-  params: Params | Promise<Params> | undefined
-}
-
-// Utility function to resolve params
-async function resolveParams(params: LayoutProps['params']): Promise<Params> {
-  if (!params) {
-    throw new Error('Params are undefined')
-  }
-  return params instanceof Promise ? await params : params
-}
+type Params = Promise<{ lang: string }>
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
 export default async function RootLayout({ children, params }: LayoutProps) {
-  const { lang } = await resolveParams(params)
-
   return (
-    <html lang={lang}>
+    <html lang={(await params).lang}>
       <body className={`${archivo.className} antialiased`}>
         <Nav />
         {children}
