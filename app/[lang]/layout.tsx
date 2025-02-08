@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'ACT',
   description: 'ACT Thailand',
 }
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
