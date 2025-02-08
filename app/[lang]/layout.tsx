@@ -22,7 +22,7 @@ type LayoutProps = {
     lang: string
   }
 }
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
