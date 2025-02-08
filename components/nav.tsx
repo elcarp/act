@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
+import LanguageSwitcher from './language-switcher'
 export default function Nav() {
   return <Navbar />
 }
@@ -154,7 +155,7 @@ const DesktopNav = ({ navItems }: any) => {
       <button className='hidden md:block px-8 py-2 text-sm font-bold rounded-lg bg-teal-500 dark:bg-white dark:text-black  text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]'>
         Apply
       </button>
-      <span className='ml-3 cursor-pointer'>🇹🇭</span>
+      <span className='ml-3 cursor-pointer'><LanguageSwitcher/></span>
     </motion.div>
   )
 }
