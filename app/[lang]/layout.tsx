@@ -26,12 +26,9 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
-export default function RootLayout({
-  children,
-  params: { lang },
-}: LayoutProps) {
+export default function RootLayout({ children, params }: LayoutProps) {
   return (
-    <html lang={lang}>
+    <html lang={params.lang}>
       <body className={`${archivo.className} antialiased`}>
         <Nav />
         {children}
