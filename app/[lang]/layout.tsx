@@ -15,20 +15,28 @@ export const metadata: Metadata = {
   title: 'ACT',
   description: 'ACT Thailand',
 }
-// Define the correct type for the layout props
+
+type Params = {
+  lang: string
+}
+
 type LayoutProps = {
   children: React.ReactNode
-  params: {
-    lang: string
-  }
+  params: Params | Promise<Params>
+}
+// Utility function to resolve params
+async function resolveParams(params: LayoutProps['params']): Promise<Params> {
+  return params instanceof Promise ? await params : params
 }
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
-export default function RootLayout({ children, params }: LayoutProps) {
+export default async function RootLayout({ children, params }: LayoutProps) {
+  const { lang } = await resolveParams(params)
+
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body className={`${archivo.className} antialiased`}>
         <Nav />
         {children}
