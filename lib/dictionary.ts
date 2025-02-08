@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { locales, dictionaries } from '~config/i18n'
 
 export const getDictionary = async (locale: string) => {
