@@ -20,33 +20,49 @@ const Navbar = () => {
       link: '#',
       children: [
         {
-          name: 'Lorem ipsum',
+          name: 'What is an ACT counseling license?',
           link: '#',
         },
         {
-          name: 'Lorem ipsum2',
+          name: 'FAQs',
           link: '#',
         },
         {
-          name: 'Lorem ipsum3',
-          link: '#',
-        },
-        {
-          name: 'Lorem ipsum4',
+          name: 'Partnerships',
           link: '#',
         },
       ],
     },
     {
-      name: 'ACT Membership Benefits',
+      name: 'ACT Membership Levels',
       link: '#',
       children: [
         {
-          name: 'Lorem ipsum',
+          name: 'Fellow Member (FM)',
           link: '#',
         },
         {
-          name: 'Lorem ipsum2',
+          name: 'Accredited Counselor (AC)',
+          link: '#',
+        },
+        {
+          name: 'Licensed Counselor (LC)',
+          link: '#',
+        },
+        {
+          name: 'Associate Member (AM)',
+          link: '#',
+        },
+        {
+          name: 'Student Member (SM)',
+          link: '#',
+        },
+        {
+          name: 'Organizational Member (OM)',
+          link: '#',
+        },
+        {
+          name: 'Overview',
           link: '#',
         },
       ],
@@ -54,20 +70,10 @@ const Navbar = () => {
     {
       name: 'Apply',
       link: '#',
-      children: [
-        {
-          name: 'Lorem ipsum',
-          link: '#',
-        },
-        {
-          name: 'Lorem ipsum2',
-          link: '#',
-        },
-        {
-          name: 'Lorem ipsum3',
-          link: '#',
-        },
-      ],
+    },
+    {
+      name: 'Contact Us',
+      link: '#',
     },
   ]
 
@@ -97,16 +103,10 @@ const DesktopNav = ({ navItems }: any) => {
                 setActive={setActive}
                 active={active}
                 item={navItem.name}>
-                <div className='flex flex-col space-y-4 text-sm'>
-                  {navItem.children &&
-                    navItem.children.map(
-                      ({
-                        name,
-                        link,
-                      }: {
-                        name: string
-                        link: string
-                      }) => {
+                {navItem.children && (
+                  <div className={`flex flex-col space-y-4 text-sm`}>
+                    {navItem.children.map(
+                      ({ name, link }: { name: string; link: string }) => {
                         return (
                           <HoveredLink key={name} href={link}>
                             {name}
@@ -114,48 +114,16 @@ const DesktopNav = ({ navItems }: any) => {
                         )
                       }
                     )}
-                </div>
+                  </div>
+                )}
               </MenuItem>
             )
           })}
-          {/* <MenuItem setActive={setActive} active={active} item='About the ACT'>
-            <div className='flex flex-col space-y-4 text-sm'>
-              <HoveredLink href='/#'>Web Development</HoveredLink>
-              <HoveredLink href='/#'>Interface Design</HoveredLink>
-              <HoveredLink href='/seo'>Search Engine Optimization</HoveredLink>
-              <HoveredLink href='/branding'>Branding</HoveredLink>
-            </div>
-          </MenuItem> */}
-          {/* <MenuItem setActive={setActive} active={active} item='ACT Membership Benefits'>
-            <div className='  text-sm grid grid-cols-2 gap-10 p-4'>
-              <ProductItem
-                title='Algochurn'
-                href='https://algochurn.com'
-                src={logo.src}
-                description='Prepare for tech interviews like never before.'
-              />
-              <ProductItem
-                title='Tailwind Master Kit'
-                href='https://tailwindmasterkit.com'
-                src={logo.src}
-                description='Production ready Tailwind css components for your next project'
-              />
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item='Apply'>
-            <div className='flex flex-col space-y-4 text-sm'>
-              <HoveredLink href='/hobby'>Hobby</HoveredLink>
-              <HoveredLink href='/individual'>Individual</HoveredLink>
-              <HoveredLink href='/team'>Team</HoveredLink>
-              <HoveredLink href='/enterprise'>Enterprise</HoveredLink>
-            </div>
-          </MenuItem> */}
         </Menu>
       </div>
-      <button className='hidden md:block px-8 py-2 text-sm font-bold rounded-lg bg-teal-500 dark:bg-white dark:text-black  text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]'>
-        Apply
-      </button>
-      <span className='ml-3 cursor-pointer'><LanguageSwitcher/></span>
+      <span className='ml-3 cursor-pointer'>
+        <LanguageSwitcher />
+      </span>
     </motion.div>
   )
 }
@@ -290,7 +258,7 @@ export const MenuItem = ({
         className='cursor-pointer text-neutral-700 dark:text-neutral-300 hover:opacity-[0.9] '>
         {item}
       </motion.p>
-      {active !== null && (
+      {active !== null && children && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
