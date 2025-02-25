@@ -5,7 +5,6 @@ import Introduction from '~components/introduction'
 
 
 export default function Home() {
-  console.log(locales)
   return (
     <>
       <Hero />
