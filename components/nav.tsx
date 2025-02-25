@@ -17,11 +17,11 @@ const Navbar = () => {
   const navItems = [
     {
       name: 'About the ACT',
-      link: '#',
+      link: '/about-the-act',
       children: [
         {
           name: 'What is an ACT counseling license?',
-          link: '#',
+          link: '/about-the-act',
         },
         {
           name: 'FAQs',
