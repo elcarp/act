@@ -3,8 +3,11 @@ import React from 'react'
 import ColourfulText from '~components/ui/colourful-text'
 import { motion } from 'motion/react'
 import hero from '~public/images/hero.jpg'
+import { usePathname } from 'next/navigation'
 
 export default function Hero() {
+  const pathName = usePathname()
+  console.log(pathName)
   return (
     <>
       <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
@@ -17,8 +20,11 @@ export default function Hero() {
             transition={{ duration: 1 }}
           />
           <h1 className='max-w-5xl text-2xl md:text-5xl lg:text-6xl text-center text-white relative z-2'>
-            Empowering and <span className='font-extrabold'><ColourfulText text='Elevating' /></span> <br /> Counseling
-            Standards in Thailand
+            Educate, Empower,{' '} 
+            <span className='font-extrabold'>
+              <ColourfulText text='Elevate' />
+            </span>{' '}
+            <br /> Counseling Standards in Thailand
           </h1>
           <div className='mt-10 mx-auto flex w-96 justify-center'>
             <button className='w-40 mx-2 px-8 py-2 rounded-md bg-transparent text-white font-bold transition duration-200 hover:bg-teal-500 border-2 border-teal-500'>

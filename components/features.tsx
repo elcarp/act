@@ -14,11 +14,7 @@ export default function Features() {
       <h2 className=' text-bold text-xl text-center md:text-4xl font-bold tracking-tight text-neutral-8000 dark:text-neutral-100'>
         Unlock Your Potential as a Licensed Counselor
       </h2>
-      <p className='max-w-lg text-sm text-neutral-600 text-center mx-auto mt-4 dark:text-neutral-400'>
-        Being a licensed counselor enhances credibility, fosters trust with
-        clients, and ensures that counselors operate within legal and
-        professional boundaries on an international standard.
-      </p>
+
       <div className='mt-20  grid cols-1 md:grid-cols-3 gap-4 md:auto-rows-[25rem]'>
         {items.map((item, index) => (
           <Card

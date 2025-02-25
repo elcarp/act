@@ -4,17 +4,37 @@ import React from 'react'
 import WobbleCard from '~components/ui/wobble-card'
 import counseling from '~public/images/counseling.jpg'
 import counseling2 from '~public/images/counseling2.jpg'
+import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
 
 export default function Introduction() {
+  const placeholders = [
+    'Search for counselor here',
+    "Enter counselor's first or last name",
+  ]
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
+  }
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log('submitted')
+  }
   return (
     <section className='py-20 gradient-background'>
       <div className='max-w-2xl mx-auto'>
-        <p className='text-white text-center pb-20'>
+        <p className='text-white text-center pb-10 text-lg'>
           Welcome to the Accredited Counselors of Thailand (ACT), where we
           advocate for the importance of professional counseling standards. Join
           us in fostering a community of licensed counselors in Thailand
           dedicated to quality, excellence, and ethical practice.
         </p>
+      </div>
+      <div className='mb-20'>
+        <PlaceholdersAndVanishInput
+          placeholders={placeholders}
+          onChange={handleChange}
+          onSubmit={onSubmit}
+        />
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-4xl mx-auto w-full'>
         <WobbleCard
