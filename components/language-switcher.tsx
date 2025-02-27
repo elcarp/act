@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
   const pathWithoutLang = getPathWithoutLang(pathname, currentLang)
 
   return (
-    <div>
+    <div className='text-sm'>
       <Link
         href={pathWithoutLang}
         className={currentLang === defaultLocale ? 'font-bold' : ''}>
