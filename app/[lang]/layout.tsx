@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   title: 'ACT',
   description: 'ACT Thailand',
 }
-// Define the correct type for the layout props
 type LayoutProps = {
   children: React.ReactNode
   params: Params
