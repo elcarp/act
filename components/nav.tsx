@@ -69,7 +69,7 @@ const Navbar = () => {
     },
     {
       name: 'Apply',
-      link: '#',
+      link: '/apply',
     },
     {
       name: 'Contact Us',
@@ -102,7 +102,8 @@ const DesktopNav = ({ navItems }: any) => {
                 key={navItem.name}
                 setActive={setActive}
                 active={active}
-                item={navItem.name}>
+                item={navItem.name}
+                link={navItem.link}>
                 {navItem.children && (
                   <div className={`flex flex-col space-y-4 text-sm`}>
                     {navItem.children.map(
@@ -244,11 +245,13 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  link,
   children,
 }: {
   setActive: (item: string) => void
   active: string | null
   item: string
+  link: string
   children?: React.ReactNode
 }) => {
   return (
@@ -256,7 +259,7 @@ export const MenuItem = ({
       <motion.p
         transition={{ duration: 0.3 }}
         className='cursor-pointer text-neutral-700 dark:text-neutral-300 hover:opacity-[0.9] '>
-        {item}
+        <Link href={link}>{item}</Link>
       </motion.p>
       {active !== null && children && (
         <motion.div
