@@ -10,9 +10,9 @@ export function ApplicationForm() {
   }
 
   return (
-    <div className='bg-gray-50 dark:bg-neutral-900 w-full flex items-center justify-center'>
+    <div className='bg-gray-100 dark:bg-neutral-900 w-full flex items-center justify-center'>
       <div className='flex relative px-4 z-20 items-center w-full justify-center py-10'>
-        <div className='mx-auto w-full max-w-lg bg-white dark:bg-neutral-950 px-4 md:px-10 py-8 shadow-input rounded-3xl'>
+        <div className='mx-auto w-full max-w-lg bg-gray-50 dark:bg-neutral-950 px-4 md:px-10 py-8 shadow-input rounded-3xl'>
           <div className='py-10'>
             <div>
               <form onSubmit={handleSubmit} className='space-y-4'>
