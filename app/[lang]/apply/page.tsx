@@ -1,3 +1,4 @@
+import { ApplicationForm } from "~components/application-form";
 
 export default function About() {
   return (
@@ -5,21 +6,19 @@ export default function About() {
       <section className='py-20 bg-slate-100'>
         <div className='max-w-3xl mx-auto px-10'>
           <h1 className='text-2xl md:text-5xl lg:text-6xl'>Apply</h1>
-          <h3 className='text-lg mt-8'>Purpose & Use</h3>
-          <p className='mt-3'>
-            An ACT counseling license is a credential granted by the Accredited
-            Counselors of Thailand (ACT) to qualified counselors in Thailand who
-            meet the criteria. The purpose of obtaining an ACT counseling
-            license is to ethically provide counseling services in accordance
-            with international standards. A licensed counselor refers to a
-            professional who has met the standard requirements regarding
-            education, training, and ethical standards in providing counseling
-            services. In other countries, this is sometimes called a registered
-            counselor—the terms registered and licensed are interchangeable. An
-            accredited counselor goes one step further: this is a highly
-            experienced counselor who has held a license for at least five years
-            and has made significant contributions to the mental health field.
+          <p className='mt-8'>
+            We accept ongoing applications year-round. For AC and RC levels, the
+            application deadline is November 15th annually. Results will be
+            published by February of the following year. To start your
+            application, please fill out the form below. Once we have reviewed
+            this form, we will send you an email of the other forms and
+            documents that need to be filled out and submitted according to your
+            membership level. If you have any questions, please do not hesitate
+            to get in touch with us by email.
           </p>
+          <div className='mt-8'>
+            <ApplicationForm/>
+          </div>
         </div>
       </section>
     </>
