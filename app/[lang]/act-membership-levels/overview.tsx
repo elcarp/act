@@ -3,7 +3,7 @@ export default function Overview() {
     <div>
       <h3 className='text-lg mt-8 font-bold text-center'>Overview</h3>
       <div className='table rounded-xl bg-slate-200 mt-4 shadow-lg text-xs lg:text-base'>
-        <div className='grid grid-cols-6'>
+        <div className='grid grid-cols-6 sticky top-0'>
           <div className='bg-gray-300 p-4 font-bold'>Membership Type</div>
           <div className='bg-gray-300 p-4 font-bold'>Junior Member (JM)</div>
           <div className='bg-gray-300 p-4 font-bold'>Associate Member (AM)</div>
@@ -14,26 +14,27 @@ export default function Overview() {
             Accredited Counselor (AC)
           </div>
           <div className='bg-gray-300 p-4 font-bold'>Fellow Member (FM)</div>
-
+        </div>
+        <div className='grid grid-cols-6'>
           <div className='bg-white p-4 font-semibold'>Education Level</div>
           <div className='bg-white p-4'>
-            Bachelor&apos;s or equivalent in Counseling, Psychology, Social Work, or
-            a related field
+            Bachelor&apos;s or equivalent in Counseling, Psychology, Social
+            Work, or a related field
           </div>
           <div className='bg-white p-4'>
             Bachelor&apos;s or equivalent in any field
           </div>
           <div className='bg-white p-4'>
-            Master&apos;s or equivalent in Counseling, Psychology, Social Work, or a
-            related field
+            Master&apos;s or equivalent in Counseling, Psychology, Social Work,
+            or a related field
           </div>
           <div className='bg-white p-4'>
-            Master&apos;s or equivalent in Counseling, Psychology, Social Work, or a
-            related field
+            Master&apos;s or equivalent in Counseling, Psychology, Social Work,
+            or a related field
           </div>
           <div className='bg-white p-4'>
-            Master&apos;s or equivalent in Counseling, Psychology, Social Work, or a
-            related field
+            Master&apos;s or equivalent in Counseling, Psychology, Social Work,
+            or a related field
           </div>
 
           <div className='bg-white p-4 font-semibold'>
