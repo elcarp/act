@@ -104,7 +104,7 @@ export function ApplicationForm() {
 
                 <label
                   htmlFor='message'
-                  className='block text-sm font-bold leading-6 text-neutral-700 dark:text-neutral-400 mt-20'>
+                  className='block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400 pt-8'>
                   Questions or concerns
                 </label>
 
