@@ -35,35 +35,35 @@ const Navbar = () => {
     },
     {
       name: 'ACT Membership Levels',
-      link: '#',
+      link: '/act-membership-levels',
       children: [
         {
           name: 'Fellow Member (FM)',
-          link: '#',
+          link: '/act-membership-levels#fellow-member',
         },
         {
           name: 'Accredited Counselor (AC)',
-          link: '#',
+          link: '/act-membership-levels#accredited-counselor',
         },
         {
           name: 'Licensed Counselor (LC)',
-          link: '#',
+          link: '/act-membership-levels#licensed-counselor',
         },
         {
           name: 'Associate Member (AM)',
-          link: '#',
+          link: '/act-membership-levels#associated-member',
         },
         {
           name: 'Student Member (SM)',
-          link: '#',
+          link: '/act-membership-levels#student-member',
         },
         {
           name: 'Organizational Member (OM)',
-          link: '#',
+          link: '/act-membership-levels#organizational-member',
         },
         {
           name: 'Overview',
-          link: '#',
+          link: '/act-membership-levels#overview',
         },
       ],
     },
