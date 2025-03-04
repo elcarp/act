@@ -59,7 +59,12 @@ export default function Footer() {
         </div>
 
         <p className='mb-4 pt-10 text-sm text-neutral-600 dark:text-neutral-400'>
-          &copy; {new Date().getFullYear()} ACT Reserved.
+          &copy; {new Date().getFullYear()} ACT Reserved. Website designed and
+          developed by{' '}
+          <Link href='https://lisecarpenter.com/' target='_blank'>
+            Lise Carpenter
+          </Link>
+          .
         </p>
       </div>
     </div>
