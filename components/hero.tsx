@@ -4,6 +4,7 @@ import ColourfulText from '~components/ui/colourful-text'
 import { motion } from 'motion/react'
 import hero from '~public/images/hero.jpg'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Hero() {
   const pathName = usePathname()
@@ -20,19 +21,23 @@ export default function Hero() {
             transition={{ duration: 1 }}
           />
           <h1 className='max-w-5xl text-2xl md:text-5xl lg:text-6xl text-center text-white relative z-2'>
-            Educate, Empower,{' '} 
+            Educate, Empower,{' '}
             <span className='font-extrabold'>
               <ColourfulText text='Elevate' />
             </span>{' '}
             <br /> Counseling Standards in Thailand
           </h1>
           <div className='mt-10 mx-auto flex w-96 justify-center'>
-            <button className='w-40 mx-2 px-8 py-2 rounded-md bg-transparent text-white font-bold transition duration-200 hover:bg-teal-500 border-2 border-teal-500'>
-              Learn More
-            </button>
-            <button className='w-40 mx-2 px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-transparent border-2 border-transparent hover:border-teal-500'>
-              Apply
-            </button>
+            <Link href='/about-the-act'>
+              <button className='w-40 mx-2 px-8 py-2 rounded-md bg-transparent text-white font-bold transition duration-200 hover:bg-teal-500 border-2 border-teal-500'>
+                Learn More
+              </button>
+            </Link>
+            <Link href='/apply'>
+              <button className='w-40 mx-2 px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-transparent border-2 border-transparent hover:border-teal-500'>
+                Apply
+              </button>
+            </Link>
           </div>
         </div>
       </div>
