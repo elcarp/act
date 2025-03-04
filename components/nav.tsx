@@ -25,7 +25,7 @@ const Navbar = () => {
         },
         {
           name: 'FAQs',
-          link: '/about-the-act#FAQ',
+          link: '/about-the-act#faq',
         },
         {
           name: 'Partnerships',
