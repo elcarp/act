@@ -32,33 +32,95 @@ const FAQs = [
   {
     question: 'Why do I need a counseling network?',
     answer: (
-      <ul className='list-disc pl-5'>
-        <li>Share knowledge and insights.</li>
-        <li>Continuous learning and professional growth.</li>
-        <li>Expand your network for partnerships and referrals.</li>
-      </ul>
+      <p>
+        Engaging with other professionals provides an invaluable opportunity to
+        share knowledge, insights, and effective strategies from diverse
+        perspectives, enabling you to improve your practice and grow as a
+        counselor. This collaborative approach fosters continuous learning,
+        enhances professional competency, encourages innovation in addressing
+        challenges within the field, and opens doors to partnerships and
+        referrals.
+      </p>
     ),
   },
   {
     question: 'How much does it cost to become a licensed counselor?',
     answer: (
-      <p>
+      <div>
         ACT keeps membership fees affordable thanks to the support of the
         <strong> LEAF Foundation</strong>. Our annual prices for each membership
         tier are listed below:
-      </p>
+        <ul className='list-disc ml-4 mt-4'>
+          <li>Fellow Member (FM) - 1,000 THB</li>
+          <li>Accredited Counselor (AC) - 4,000 THB </li>
+          <li>Licensed Counselor (LC) - 2,000 THB</li>
+          <li>Associate Member (AM) - 1,000 THB</li>
+          <li>Junior Member (JM) - Free of charge</li>
+        </ul>
+      </div>
     ),
   },
   {
     question:
       "What's the difference between a psychologist, psychiatrist, and a counselor? Do they all need licenses?",
     answer: (
-      <p>
-        Psychologists, psychiatrists, and counselors all work in the mental
-        health field, but they have different roles, training, and ways of
-        helping people.
-      </p>
+      <>
+        <p>
+          Psychologists, psychiatrists, and counselors all work in the mental
+          health field, but they have different roles, training, and ways of
+          helping people.
+        </p>
+        <ul className='list-disc ml-4 mt-4'>
+          <li className='mb-4'>
+            Psychologists have a doctoral degree (Ph.D. or Psy.D.) in
+            psychology. They are trained to assess, diagnose, and treat mental
+            health issues through talk therapy, often using specific therapeutic
+            techniques. They don&apos;t prescribe medication but may work with
+            psychiatrists or other healthcare providers for that. They need a
+            license to practice, which usually requires passing a national exam.
+            Clinical psychologists in Thailand must be licensed with the
+            Department of Mental Health (DMH).{' '}
+          </li>
+
+          <li className='mb-4'>
+            Psychiatrists are medical doctors (MD or DO) who specialize in
+            mental health. They can prescribe medications, offer therapy, and
+            diagnose mental illnesses. Their medical training allows them to
+            understand the physical aspects of mental health issues, like how
+            brain chemistry impacts behavior. In Thailand, psychiatrists must be
+            licensed with the Medical Council of Thailand (TMC).{' '}
+          </li>
+
+          <li className='mb-4'>
+            Counselors typically have a master&paos;s degree in counseling or a
+            related field. They focus on providing support and therapy for
+            issues like stress, anxiety, or relationship problems. Some
+            counselors may specialize in specific areas (e.g. marriage,
+            addiction, disordered eating), and they may use a range of
+            therapeutic tools such as CBT, EMDR, somatic approach,
+            person-centered therapy, and more. Counselors don&apos;t prescribe
+            medication but may work with psychiatrists or other healthcare
+            providers for that. Like psychologists, they also need to be
+            licensed, which involves completing a specific number of supervised
+            hours and professional development. In Thailand, there is currently
+            no licensing mandate for counselors, but with ACT&apos;s new
+            licensing board, this may change soon.{' '}
+          </li>
+        </ul>
+        <p>
+          In short, while they all work with mental health, psychologists and
+          psychiatrists have more extensive medical training, and counselors
+          tend to provide more direct support for everyday issues. And yes, all
+          of them need licenses to practice, though the requirements can vary by
+          country.
+        </p>
+      </>
     ),
+  },
+  {
+    question: "What's the difference between a coach and a counselor?",
+    answer:
+      'While both coaches and counselors support personal growth, their roles differ significantly. Counselors are trained to address emotional and psychological issues, often working with clients to overcome trauma, mental health challenges, or relational conflicts. This requires formal education, licensing, and adherence to ethical standards. Coaches, on the other hand, focus on helping clients achieve specific goals, such as career advancement or personal development, and are not equipped to address complex mental health issues.',
   },
 ]
 
