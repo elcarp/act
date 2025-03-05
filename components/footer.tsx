@@ -6,14 +6,11 @@ import logo from '~public/images/act-logo.png'
 
 export default function Footer() {
   return (
-    <div className='bg-gray-50 dark:bg-neutral-800'>
-      <div className='mx-auto max-w-7xl px-4 py-10 md:px-8'>
-        <div className='border-b border-neutral-200 pb-2 dark:border-neutral-700'>
-          <div className='mb-10 max-w-xl'>
-            <Logo className='justify-start' />
-          </div>
-        </div>
-        <div className='grid grid-cols-2 gap-10 border-b border-neutral-200 pb-10 pt-10 dark:border-neutral-700 md:grid-cols-4'>
+    <div className='bg-gray-50 dark:bg-neutral-800 text-center'>
+      <div className='mb-10 max-w-xl mx-auto text-center'>
+        <Logo className='justify-center' />
+      </div>
+      {/* <div className='grid grid-cols-2 gap-10 border-b border-neutral-200 pb-10 pt-10 dark:border-neutral-700 md:grid-cols-4'>
           <ul className='text-base font-medium text-neutral-800 dark:text-neutral-200'>
             <li className='mb-4 text-sm font-bold text-black dark:text-white'>
               About the ACT
@@ -56,17 +53,16 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
-        <p className='mb-4 pt-10 text-sm text-neutral-600 dark:text-neutral-400'>
-          &copy; {new Date().getFullYear()} ACT Reserved. Website designed and
-          developed by{' '}
-          <Link href='https://lisecarpenter.com/' target='_blank'>
-            Lise Carpenter
-          </Link>
-          .
-        </p>
-      </div>
+      <p className='mb-4 pt-10 text-sm text-neutral-600 dark:text-neutral-400'>
+        &copy; {new Date().getFullYear()} ACT Reserved. Website designed and
+        developed by{' '}
+        <Link href='https://lisecarpenter.com/' target='_blank'>
+          Lise Carpenter
+        </Link>
+        .
+      </p>
     </div>
   )
 }
@@ -121,7 +117,7 @@ const Logo = ({ className }: { className?: string }) => {
     <Link
       href='/'
       className={cn(
-        'flex flex-shrink-0 items-center justify-center space-x-2 py-6 text-center text-2xl font-bold text-neutral-600 selection:bg-emerald-500 dark:text-gray-100',
+        'flex items-center justify-center py-6 text-center text-2xl font-bold text-neutral-600 selection:bg-emerald-500 dark:text-gray-100',
         className
       )}>
       <div className='relative flex h-14 w-14 items-center justify-center rounded-md border text-sm text-white antialiased md:h-6 md:w-6'>

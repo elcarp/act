@@ -5,7 +5,7 @@ export default function About() {
     <>
       <section className='py-20 bg-slate-100'>
         <div className='max-w-3xl mx-auto px-10'>
-          <h1 className='text-2xl md:text-5xl lg:text-6xl'>Apply</h1>
+          <h1 className='text-2xl md:text-5xl lg:text-6xl text-center'>Apply</h1>
           <p className='mt-8'>
             We accept ongoing applications year-round. For AC and RC levels, the
             application deadline is November 15th annually. Results will be
