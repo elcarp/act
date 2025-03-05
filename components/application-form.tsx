@@ -1,126 +1,97 @@
 'use client'
 
 export function ApplicationForm() {
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
-  ) => {
-    e.preventDefault()
-    const target = e.target as HTMLFormElement
-    console.log(target)
-  }
-
   return (
     <div className='bg-gray-100 dark:bg-neutral-900 w-full flex items-center justify-center'>
       <div className='flex relative px-4 z-20 items-center w-full justify-center py-10'>
         <div className='mx-auto w-full max-w-lg bg-gray-50 dark:bg-neutral-950 px-4 md:px-10 py-8 shadow-input rounded-3xl'>
           <div className='py-10'>
             <div>
-              <form onSubmit={handleSubmit} className='space-y-4'>
-                <label
-                  htmlFor='name'
-                  className='block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400'>
+              <form
+                action='https://public.herotofu.com/v1/cb9dd370-f976-11ef-896c-cb89bf5fb2e4'
+                method='POST'
+                className='space-y-4'>
+                <label htmlFor='name' className='block text-sm font-medium'>
                   Full Name
                 </label>
+                <input
+                  id='name'
+                  name='name'
+                  type='text'
+                  required
+                  placeholder='Your full name here'
+                  className='block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input'
+                />
 
-                <div className='mt-2'>
-                  <input
-                    id='name'
-                    type='name'
-                    required
-                    placeholder='Your full name here'
-                    className='block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white'
-                  />
-                </div>
-
-                <label
-                  htmlFor='email'
-                  className='block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400'>
+                <label htmlFor='email' className='block text-sm font-medium'>
                   Email address
                 </label>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  required
+                  placeholder='hello@johndoe.com'
+                  className='block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input'
+                />
 
-                <div className='mt-2'>
-                  <input
-                    id='email'
-                    type='email'
-                    required
-                    placeholder='hello@johndoe.com'
-                    className='block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white'
-                  />
-                </div>
-
-                <label
-                  htmlFor='membership'
-                  className='block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400'>
-                  Membership level you are interested in applying for (5 options
-                  for them to choose from):
+                <label className='block text-sm font-medium'>
+                  Membership Level
                 </label>
-
                 <div className='space-y-2'>
-                  <label className='flex items-center space-x-2 text-sm'>
-                    <input
-                      type='checkbox'
-                      className='form-checkbox'
-                      value='JM'
-                    />
-                    <span>Junior Member (JM)</span>
-                  </label>
-
-                  <label className='flex items-center space-x-2 text-sm'>
-                    <input
-                      type='checkbox'
-                      className='form-checkbox'
-                      value='AM'
-                    />
-                    <span>Associate Member (AM)</span>
-                  </label>
-
-                  <label className='flex items-center space-x-2 text-sm'>
-                    <input
-                      type='checkbox'
-                      className='form-checkbox'
-                      value='LC'
-                    />
-                    <span>Licensed Counselor (LC)</span>
-                  </label>
-
-                  <label className='flex items-center space-x-2 text-sm'>
-                    <input
-                      type='checkbox'
-                      className='form-checkbox'
-                      value='AC'
-                    />
-                    <span>Accredited Counselor (AC)</span>
-                  </label>
-
-                  <label className='flex items-center space-x-2 text-sm'>
-                    <input
-                      type='checkbox'
-                      className='form-checkbox'
-                      value='FM'
-                    />
-                    <span>Fellow Member (FM)</span>
-                  </label>
+                  {[
+                    { value: 'JM', label: 'Junior Member (JM)' },
+                    { value: 'AM', label: 'Associate Member (AM)' },
+                    { value: 'LC', label: 'Licensed Counselor (LC)' },
+                    { value: 'AC', label: 'Accredited Counselor (AC)' },
+                    { value: 'FM', label: 'Fellow Member (FM)' },
+                  ].map((option) => (
+                    <label
+                      key={option.value}
+                      className='flex items-center space-x-2 text-sm'>
+                      <input
+                        type='checkbox'
+                        name='membership'
+                        value={option.value}
+                        className='form-checkbox'
+                      />
+                      <span>{option.label}</span>
+                    </label>
+                  ))}
                 </div>
 
                 <label
                   htmlFor='message'
-                  className='block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400 pt-8'>
+                  className='block text-sm font-medium pt-8'>
                   Questions or concerns
                 </label>
+                <textarea
+                  rows={5}
+                  id='message'
+                  name='message'
+                  placeholder='Enter your message here'
+                  className='block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input'
+                />
 
-                <div className='mt-2'>
-                  <textarea
-                    rows={5}
-                    id='message'
-                    placeholder='Enter your message here'
-                    className='block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white'
+                <input
+                  type='submit'
+                  value='Submit'
+                  className='bg-black hover:bg-black/90 text-white text-sm font-medium rounded-full px-4 py-2 w-full'
+                />
+                <div
+                  style={{
+                    textIndent: '-99999px',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    position: 'absolute',
+                  }}
+                  aria-hidden='true'>
+                  <input
+                    type='text'
+                    name='_gotcha'
+                    tabIndex={-1}
+                    autoComplete='off'
                   />
-                </div>
-
-                <div>
-                  <button className='bg-black relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-2  flex items-center justify-center w-full dark:text-black dark:bg-white dark:hover:bg-neutral-100 dark:hover:shadow-xl'>
-                    Submit
-                  </button>
                 </div>
               </form>
             </div>
