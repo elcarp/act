@@ -10,50 +10,6 @@ export default function Footer() {
       <div className='mb-10 max-w-xl mx-auto text-center'>
         <Logo className='justify-center' />
       </div>
-      {/* <div className='grid grid-cols-2 gap-10 border-b border-neutral-200 pb-10 pt-10 dark:border-neutral-700 md:grid-cols-4'>
-          <ul className='text-base font-medium text-neutral-800 dark:text-neutral-200'>
-            <li className='mb-4 text-sm font-bold text-black dark:text-white'>
-              About the ACT
-            </li>
-            {ABOUT_ACT.map((item, idx) => (
-              <li key={'first' + idx} className='mb-4 text-sm font-normal'>
-                <Link
-                  href={item.href}
-                  className='text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white'>
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ul className='text-base font-medium text-neutral-800 dark:text-neutral-200'>
-            <li className='mb-4 text-sm font-bold text-black dark:text-white'>
-              Membership Benefits
-            </li>
-            {MEMBERSHIP.map((item, idx) => (
-              <li key={'first' + idx} className='mb-4 text-sm font-normal'>
-                <Link
-                  href={item.href}
-                  className='text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white'>
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ul className='text-base font-medium text-neutral-800 dark:text-neutral-200'>
-            <li className='mb-4 text-sm font-bold text-black dark:text-white'>
-              Contact
-            </li>
-            {CONTACT.map((item, idx) => (
-              <li key={'first' + idx} className='mb-4 text-sm font-normal'>
-                <Link
-                  href={item.href}
-                  className='text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white'>
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div> */}
 
       <p className='mb-4 pt-10 text-sm text-neutral-600 dark:text-neutral-400'>
         &copy; {new Date().getFullYear()} ACT Reserved. Website designed and
@@ -66,52 +22,6 @@ export default function Footer() {
     </div>
   )
 }
-
-const MEMBERSHIP = [
-  {
-    title: 'Lorem ipsum',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum2',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum3',
-    href: '#',
-  },
-]
-
-const ABOUT_ACT = [
-  {
-    title: 'Lorem ipsum',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum2',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum3',
-    href: '#',
-  },
-]
-
-const CONTACT = [
-  {
-    title: 'Lorem ipsum',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum2',
-    href: '#',
-  },
-  {
-    title: 'Lorem ipsum3',
-    href: '#',
-  },
-]
-
 const Logo = ({ className }: { className?: string }) => {
   return (
     <Link
