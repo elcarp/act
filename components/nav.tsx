@@ -73,7 +73,7 @@ const Navbar = () => {
     },
     {
       name: 'Contact Us',
-      link: '#',
+      link: '/contact-us',
     },
   ]
 
