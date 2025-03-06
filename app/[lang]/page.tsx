@@ -1,6 +1,7 @@
 import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
+import LatestNews from '~components/latest-news'
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <Introduction />
       <Features />
+      <LatestNews/>
     </>
   )
 }
