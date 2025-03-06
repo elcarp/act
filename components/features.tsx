@@ -3,10 +3,7 @@
 import { cn } from '~lib/utils'
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import credibility from '~public/images/image1.jpg'
-import opportunities from '~public/images/opportunities.jpg'
-import benefits from '~public/images/image3.jpg'
+import Link from 'next/link'
 
 export default function Features() {
   return (
@@ -15,17 +12,17 @@ export default function Features() {
         Unlock Your Potential as a Licensed Counselor
       </h2>
 
-      <div className='mt-20  grid cols-1 md:grid-cols-3 gap-4 md:auto-rows-[25rem]'>
+      <div className='mt-20 grid cols-1 md:grid-cols-3 gap-4'>
         {items.map((item, index) => (
-          <Card
-            key={index}
-            className={cn('flex flex-col justify-between', item.className)}>
-            <CardContent className='h-40'>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
-            </CardContent>
-            <CardSkeletonBody>{item.header}</CardSkeletonBody>
-          </Card>
+          <Link key={index} href={item.link}>
+            <Card
+              className={cn('flex flex-col justify-between', item.className)}>
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
@@ -34,61 +31,50 @@ export default function Features() {
 
 const items = [
   {
-    title: 'Professional Credibility',
+    title: 'Fellow Member (FM)',
     description:
-      'Gain recognition and trust from clients and peers in the counseling community internationally..',
-    header: (
-      <Image
-        src={credibility.src}
-        alt='Bento grid 1'
-        width={500}
-        height={500}
-        className='w-full object-cover rounded-lg ml-6'
-      />
-    ),
+      'An FM is a retired counselor who previously held accredited counselor (AC) status and was nominated by other ACT members to be a Fellow Member in their retirement.',
     className: 'md:col-span-1',
+    link: 'act-membership-levels#fellow-member',
   },
   {
-    title: 'Expanded Opportunities',
+    title: 'Accredited Counselor (AC)',
     description:
-      'Access a wide range of new opportunities both in Thailand and across borders by enhancing your credibility.',
-    header: (
-      <Image
-        src={opportunities.src}
-        alt='Bento grid 2'
-        width={500}
-        height={500}
-      />
-    ),
+      'An AC is an advanced counselor with vast experience in the field and a deep understanding of all aspects of counseling. (Licensed)',
     className: 'md:col-span-1',
+    link: 'act-membership-levels#accredited-counselor',
   },
   {
-    title: 'Membership Benefits',
+    title: 'Licensed Counselor (LC)',
     description:
-      'Membership provides exclusive access to resources and networking opportunities.',
-    header: (
-      <Image
-        src={benefits.src}
-        alt='Bento grid 3'
-        width={500}
-        height={500}
-        className='rounded-lg -ml-6 object-cover -mt-4 md:-mt-0'
-      />
-    ),
+      'An LC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with RC status are listed in the ACT online registry. (Licensed)',
+
     className: 'md:col-span-1',
+    link: 'act-membership-levels#licensed-counselor',
+  },
+  {
+    title: 'Associate Member (AM)',
+    description:
+      'An AM is an individual in a field other than counseling with an interest in therapy, psychology, or mental health who has completed at least one ACT-approved course. (Not a license)',
+    className: 'md:col-span-1',
+    link: 'act-membership-levels#associate-member',
+  },
+  {
+    title: 'Junior Member (JM)',
+    description:
+      'A JM is a novice counselor who is pursuing or has just completed their degree in Counseling or a related field and is interested in gaining experience and learning from other counselors. (Not a license)',
+    className: 'md:col-span-1',
+    link: 'act-membership-levels#junior-member',
+  },
+  {
+    title: 'Organizational Member (OM)',
+    description:
+      'We are not accepting applications for OM this year, but details will be announced soon.',
+
+    className: 'md:col-span-1',
+    link: 'act-membership-levels#organizational-member',
   },
 ]
-
-// Card structure
-const CardSkeletonBody = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) => {
-  return <div className={cn('overflow-hidden', className)}>{children}</div>
-}
 
 const CardContent = ({
   children,
@@ -172,7 +158,7 @@ const Card = ({
     <motion.div
       whileHover='animate'
       className={cn(
-        'group isolate flex flex-col rounded-2xl bg-white dark:bg-neutral-900 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] overflow-hidden',
+        'group isolate flex flex-col rounded-2xl bg-white dark:bg-neutral-900 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)]',
         className
       )}>
       {children}
