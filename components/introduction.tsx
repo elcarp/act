@@ -22,21 +22,21 @@ export default function Introduction() {
   return (
     <section className='py-20 gradient-background'>
       <div className='max-w-2xl mx-auto'>
-        <p className='text-white text-center pb-10 text-lg'>
+        <p className='text-white text-center pb-10 text-lg px-5'>
           Welcome to the Accredited Counselors of Thailand (ACT), where we
           advocate for the importance of professional counseling standards. Join
           us in fostering a community of licensed counselors in Thailand
           dedicated to quality, excellence, and ethical practice.
         </p>
       </div>
-      <div className='mb-20'>
+      <div className='mb-20 px-5'>
         <PlaceholdersAndVanishInput
           placeholders={placeholders}
           onChange={handleChange}
           onSubmit={onSubmit}
         />
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-4xl mx-auto w-full'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-4xl mx-auto w-full px-3'>
         <WobbleCard
           containerClassName='col-span-1 lg:col-span-2 h-full bg-teal-800 min-h-[500px] lg:min-h-[300px]'
           className=''>
@@ -57,7 +57,7 @@ export default function Introduction() {
             width={450}
             height={450}
             alt='linear demo image'
-            className='absolute -right-4 lg:-right-[40%] filter -bottom-10 object-contain rounded-2xl'
+            className='hidden lg:block absolute -right-4 lg:-right-[40%] filter -bottom-10 object-contain rounded-2xl'
           />
         </WobbleCard>
         <WobbleCard containerClassName='col-span-1 min-h-[300px] bg-teal-900  '>
@@ -93,7 +93,7 @@ export default function Introduction() {
             width={600}
             height={600}
             alt='linear demo image'
-            className='absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl'
+            className='hidden lg:block absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl'
           />
         </WobbleCard>
       </div>
