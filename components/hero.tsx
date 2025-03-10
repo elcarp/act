@@ -8,7 +8,6 @@ import Link from 'next/link'
 
 export default function Hero() {
   const pathName = usePathname()
-  console.log(pathName)
   return (
     <>
       <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>

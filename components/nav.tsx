@@ -9,6 +9,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
 import LanguageSwitcher from './language-switcher'
+import { useRouter } from 'next/navigation'
+
 export default function Nav() {
   return <Navbar />
 }
@@ -130,7 +132,13 @@ const DesktopNav = ({ navItems }: any) => {
 }
 
 const MobileNav = ({ navItems }: any) => {
+  const router = useRouter()
   const [open, setOpen] = useState(false)
+
+  function handleClick(link: string) {
+    router.push(`/${link}`)
+    setOpen(!open)
+  }
 
   return (
     <>
@@ -171,7 +179,8 @@ const MobileNav = ({ navItems }: any) => {
                   ) : (
                     <Link
                       href={navItem.link}
-                      className='relative text-neutral-600 dark:text-neutral-300'>
+                      onClick={() => handleClick(navItem.link)}
+                      className='relative text-neutral-600 dark:text-neutral-300 cursor-pointer'>
                       <motion.span className='block'>
                         {navItem.name}
                       </motion.span>
@@ -179,9 +188,6 @@ const MobileNav = ({ navItems }: any) => {
                   )}
                 </div>
               ))}
-              <button className='px-8 py-2 w-full rounded-lg bg-black dark:bg-white dark:text-black font-medium text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]'>
-                Book a call
-              </button>
             </motion.div>
           )}
         </AnimatePresence>
@@ -191,6 +197,11 @@ const MobileNav = ({ navItems }: any) => {
 }
 
 const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
+  const router = useRouter()
+  function handleClick(link: string) {
+    router.push(`/${link}`)
+    setOpen(false)
+  }
   const [open, setOpen] = useState(false)
   return (
     <motion.div className='overflow-hidden'>
@@ -210,6 +221,7 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
             {navItem.children.map((child: any, childIdx: number) => (
               <Link
                 key={`child-${childIdx}`}
+                onClick={() => handleClick(navItem.link)}
                 href={child.link}
                 className='relative text-neutral-600 dark:text-neutral-300'>
                 <motion.span className='block'>{child.name}</motion.span>
