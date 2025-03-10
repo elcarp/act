@@ -51,11 +51,15 @@ const FAQs = [
         <strong> LEAF Foundation</strong>. Our annual prices for each membership
         tier are listed below:
         <ul className='list-disc ml-4 mt-4'>
-          <li>Fellow Member (FM) - 1,000 THB</li>
-          <li>Accredited Counselor (AC) - 4,000 THB </li>
-          <li>Licensed Counselor (LC) - 2,000 THB</li>
-          <li>Associate Member (AM) - 1,000 THB</li>
-          <li>Junior Member (JM) - Free of charge</li>
+          <li>Fellow Member (FM) - 1,000 THB (no application fee)</li>
+          <li>
+            Accredited Counselor (AC) - 4,000 THB (2,500 THB application fee)
+          </li>
+          <li>
+            Licensed Counselor (LC) - 2,000 THB (1,000 THB application fee)
+          </li>
+          <li>Associate Member (AM) - 1,000 THB (no application fee)</li>
+          <li>Junior Member (JM) - Free of charge (no application fee)</li>
         </ul>
       </div>
     ),
