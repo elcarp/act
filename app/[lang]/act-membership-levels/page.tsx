@@ -26,7 +26,7 @@ export default function MembershipLevels() {
           <div id='associate-member' className='py-10'>
             <AssociatedMember />
           </div>
-          <div id='student-member' className='py-10'>
+          <div id='junior-member' className='py-10'>
             <StudentMember />
           </div>
           <div id='organizational-member' className='py-10'>

@@ -47,7 +47,7 @@ const items = [
   {
     title: 'Licensed Counselor (LC)',
     description:
-      'An LC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with RC status are listed in the ACT online registry. (Licensed)',
+      'An LC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with LC status are listed in the ACT online registry. (Licensed)',
 
     className: 'md:col-span-1',
     link: 'act-membership-levels#licensed-counselor',

@@ -7,7 +7,7 @@ export default function About() {
         <div className='max-w-3xl mx-auto px-10'>
           <h1 className='text-2xl md:text-5xl lg:text-6xl text-center'>Apply</h1>
           <p className='mt-8'>
-            We accept ongoing applications year-round. For AC and RC levels, the
+            We accept ongoing applications year-round. For AC and LC levels, the
             application deadline is November 15th annually. Results will be
             published by February of the following year. To start your
             application, please fill out the form below. Once we have reviewed

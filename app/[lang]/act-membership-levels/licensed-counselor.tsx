@@ -3,9 +3,9 @@ export default function LicensedCounselor() {
     <div>
       <h3 className='text-lg mt-8 font-bold'>Licensed Counselor (LC) </h3>
       <p className='mt-3'>
-        An RC is an experienced counselor with a considerable number of client
+        An LC is an experienced counselor with a considerable number of client
         contact hours who has demonstrated their commitment to ethical,
-        accountable practice. Members with RC status are listed in the ACT
+        accountable practice. Members with LC status are listed in the ACT
         online registry.
         <span className='mt-3 block'>Annual fee: 2,000 THB </span>
         <span className='mt-3 block'>

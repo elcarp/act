@@ -56,7 +56,7 @@ const Navbar = () => {
           link: '/act-membership-levels#associate-member',
         },
         {
-          name: 'Student Member (SM)',
+          name: 'Student Member (JM)',
           link: '/act-membership-levels#student-member',
         },
         {

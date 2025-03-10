@@ -3,10 +3,10 @@ export default function StudentMember() {
     <div>
       <h3 className='text-lg mt-8 font-bold'>Junior Member (JM) </h3>
       <p className='mt-3'>
-        An SM is a novice counselor who is pursuing or has just completed their
+        An JM is a novice counselor who is pursuing or has just completed their
         degree in Counseling or a related field and is interested in gaining
         experience and learning from other counselors. Please note that members
-        with SM status are not licensed and are not listed in the ACT online
+        with JM status are not licensed and are not listed in the ACT online
         registry.
         <span className='mt-3 block'>Annual fee: Free of charge</span>
       </p>
