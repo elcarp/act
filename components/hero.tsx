@@ -3,11 +3,9 @@ import React from 'react'
 import ColourfulText from '~components/ui/colourful-text'
 import { motion } from 'motion/react'
 import hero from '~public/images/hero.jpg'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export default function Hero() {
-  const pathName = usePathname()
   return (
     <>
       <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
