@@ -4,9 +4,10 @@ export default function AccreditedCounselor() {
       <h3 className='text-lg mt-8 font-bold'>Accredited Counselor (AC) </h3>
       <p className='mt-3'>
         An AC is an advanced counselor with vast experience in the field and a
-        deep understanding of all aspects of counseling. Members with AC status
-        have demonstrated a strong commitment to the advancement of counseling
-        practice and are listed in the ACT online registry with distinction.
+        deep understanding of all aspects of counseling. Members with AC
+        status have demonstrated a strong commitment to the advancement of
+        counseling practice and are licensed and listed in the ACT online
+        registry with distinction.
         <span className='mt-3 block'>Annual fee: 4,000 THB</span>
         <span className='mt-3 block'>
           Application fee: 2,500 THB (one-time fee)
