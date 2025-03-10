@@ -56,8 +56,8 @@ const Navbar = () => {
           link: '/act-membership-levels#associate-member',
         },
         {
-          name: 'Student Member (JM)',
-          link: '/act-membership-levels#student-member',
+          name: 'Junior Member (JM)',
+          link: '/act-membership-levels#junior-member',
         },
         {
           name: 'Organizational Member (OM)',
