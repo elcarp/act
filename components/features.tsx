@@ -40,7 +40,7 @@ const items = [
   {
     title: 'Accredited Counselor (AC)',
     description:
-      'An AC is an advanced counselor with vast experience in the field and a deep understanding of all aspects of counseling. (Licensed)',
+      'An AC is an advanced counselor with vast experience in the field and a deep understanding of all aspects of counseling. Members with AC status are listed in the ACT online registry.',
     className: 'md:col-span-1',
     link: 'act-membership-levels#accredited-counselor',
   },
