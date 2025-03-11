@@ -21,7 +21,6 @@ export default async function Home() {
     content_type: 'blogPost',
   })
 
-  console.log(response)
 
   return (
     <>
