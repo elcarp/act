@@ -13,7 +13,7 @@ export default async function Home() {
 
   client
     .getEntry('6dj8bjEslrpGFqW2oZHnYK')
-    .then((entry: any) => console.log(entry))
+    .then((entry) => console.log(entry))
     .catch(console.error)
 
   const response = await client.getEntries({
