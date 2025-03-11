@@ -2,14 +2,13 @@ import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
+import * as contentful from 'contentful'
 
 export default async function Home() {
-  const contentful = require('contentful')
-
   const client = contentful.createClient({
-    space: 'mtdj6x8wk5bh',
+    space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master', // defaults to 'master' if not set
-    accessToken: 'iwxZVZvv04tCvaFtvahaUFwIJgdZ1bZlt6qlaxhx7Cs',
+    accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   })
 
   client
@@ -21,7 +20,7 @@ export default async function Home() {
     content_type: 'blogPost',
   })
 
-
+  console.log(response)
   return (
     <>
       <Hero />
