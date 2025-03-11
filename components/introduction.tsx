@@ -82,10 +82,11 @@ export default function Introduction() {
               counseling license through an extensive accreditation process both
               for individuals and organizations. Our mission is to make
               accreditation the standard practice in Thailand in order to
-              improve the quality of counseling, ensure accountability, give
-              Thai counselors the opportunity to become licensed and practice
-              globally, and provide both local and international support for
-              counselors.
+              improve the quality of counseling, ensure accountability, and
+              provide both local and international support for counselors.
+              Please note that while ACT is working towards transferable credits
+              across the APAC region in the future, local laws and licensing
+              rules always apply.
             </p>
           </div>
           <Image
