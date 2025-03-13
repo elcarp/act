@@ -76,7 +76,7 @@ export default function Introduction() {
             </h2>
             <p className='mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200'>
               Accredited Counselors of Thailand (ACT) is an independent,
-              non-profit organization established in 2024 under the LEAF
+              non-profit initiative established in 2024 under the LEAF
               Foundation, dedicated to offering Thai national and resident
               counselors the opportunity to obtain an internationally recognized
               counseling license through an extensive accreditation process both
