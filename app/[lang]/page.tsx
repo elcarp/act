@@ -1,17 +1,13 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
 
-// Define the type that matches what Next.js 15 expects
-type PageProps = {
-  params: Promise<{ lang: string }>
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
 
-export default async function Home({ params }: PageProps) {
-  // Resolve the params Promise to get the actual values
+export default async function Home({ params }: any) {
   const resolvedParams = await params
 
   const client = contentful.createClient({
@@ -28,7 +24,7 @@ export default async function Home({ params }: PageProps) {
 
   const response = await client.getEntries({
     content_type: 'homepageContent',
-    locale: resolvedParams.lang, // Use the resolved params
+    locale: resolvedParams.lang, 
   })
 
   const heroText = response.items[0].fields.heroTitleWords as string[]
