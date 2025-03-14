@@ -25,7 +25,7 @@ export default function Introduction() {
         <p className='text-white text-center pb-10 text-lg px-5'>
           Welcome to the Accredited Counselors of Thailand (ACT), where we
           advocate for the importance of professional counseling standards. Join
-          us in fostering a community of licensed counselors in Thailand
+          us in fostering a community of accredited counselors in Thailand
           dedicated to quality, excellence, and ethical practice.
         </p>
       </div>
