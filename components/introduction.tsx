@@ -48,8 +48,8 @@ export default function Introduction() {
               Registration ensures that counselors meet professional and
               international standards, providing clients with confidence in
               their care and promoting ethical practice and accountability.
-              Accreditation enhances your credibility by verifying that you are a
-              qualified counselor.
+              Accreditation enhances your credibility by verifying that you are
+              a qualified counselor.
             </p>
           </div>
           <Image
@@ -78,15 +78,15 @@ export default function Introduction() {
               Accredited Counselors of Thailand (ACT) is an independent,
               non-profit initiative established in 2024 under the LEAF
               Foundation, dedicated to offering Thai national and resident
-              counselors the opportunity to obtain an internationally recognized
-              counseling license through an extensive accreditation process both
-              for individuals and organizations. Our mission is to make
-              accreditation the standard practice in Thailand in order to
-              improve the quality of counseling, ensure accountability, and
-              provide both local and international support for counselors.
-              Please note that while ACT is working towards transferable credits
-              across the APAC region in the future, local laws and licensing
-              rules always apply.
+              counselors the opportunity to to obtain certified accreditation
+              according to international standards through an extensive
+              registration process for individuals and organizations. Our
+              mission is to make accreditation the standard practice in Thailand
+              in order to improve the quality of counseling, ensure
+              accountability, and provide both local and international support
+              for counselors. Please note that while ACT is working towards
+              transferable credits across the APAC region in the future, local
+              laws and licensing rules always apply.
             </p>
           </div>
           <Image
