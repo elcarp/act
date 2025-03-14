@@ -42,13 +42,13 @@ export default function Introduction() {
           className=''>
           <div className='max-w-xs'>
             <h2 className='text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white'>
-              Why Licensing Matters for Counselors
+              Why Accreditation Matters for Counselors
             </h2>
             <p className='mt-4 text-left  text-base/6 text-neutral-200'>
-              Licensing ensures that counselors meet professional and
+              Registration ensures that counselors meet professional and
               international standards, providing clients with confidence in
               their care and promoting ethical practice and accountability.
-              Licensing enhances your credibility by verifying that you are a
+              Accreditation enhances your credibility by verifying that you are a
               qualified counselor.
             </p>
           </div>
