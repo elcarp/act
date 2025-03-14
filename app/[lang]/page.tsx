@@ -1,4 +1,4 @@
-// @ts-ignore
+// @typescript-eslint/ban-ts-comment
 import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
