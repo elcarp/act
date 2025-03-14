@@ -4,8 +4,15 @@ import ColourfulText from '~components/ui/colourful-text'
 import { motion } from 'motion/react'
 import hero from '~public/images/hero.jpg'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
-export default function Hero() {
+interface Props {
+  firstLine: string[]
+  secondLine: string
+}
+export default function Hero({ firstLine, secondLine }: Props) {
+  const params = useParams()
+  const locale = params && params.lang
   return (
     <>
       <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
@@ -18,11 +25,15 @@ export default function Hero() {
             transition={{ duration: 1 }}
           />
           <h1 className='max-w-5xl text-2xl md:text-5xl lg:text-6xl text-center text-white relative z-2'>
-            Educate, Empower,{' '}
-            <span className='font-extrabold'>
-              <ColourfulText text='Elevate' />
-            </span>{' '}
-            <br /> Counseling Standards in Thailand
+            {firstLine[0]}, {firstLine[1]},{' '}
+            {locale == 'en-US' ? (
+              <span className='font-extrabold'>
+                <ColourfulText text={firstLine[2]} />
+              </span>
+            ) : (
+              <span>{firstLine[2]}</span>
+            )}{' '}
+            <br /> {secondLine}
           </h1>
           <div className='mt-10 mx-auto flex w-96 justify-center'>
             <Link href='/about-the-act'>
