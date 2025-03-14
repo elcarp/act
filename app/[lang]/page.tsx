@@ -1,3 +1,4 @@
+// @ts-ignore
 import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
@@ -18,7 +19,6 @@ export default async function Home({ params }: Props) {
     accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   })
 
-  // Using await instead of then/catch for consistency
   try {
     await client.getEntry('6dj8bjEslrpGFqW2oZHnYK')
   } catch (error) {
