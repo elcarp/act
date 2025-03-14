@@ -1,18 +1,19 @@
-// @typescript-eslint/ban-ts-comment
 import Features from '~components/features'
 import Hero from '~components/hero'
 import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
 
-type Props = {
-  params: {
-    lang: string
-  }
+// Define the type that matches what Next.js 15 expects
+type PageProps = {
+  params: Promise<{ lang: string }>
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default async function Home({ params }: Props) {
+export default async function Home({ params }: PageProps) {
+  // Resolve the params Promise to get the actual values
+  const resolvedParams = await params
+
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
@@ -27,8 +28,9 @@ export default async function Home({ params }: Props) {
 
   const response = await client.getEntries({
     content_type: 'homepageContent',
-    locale: params.lang,
+    locale: resolvedParams.lang, // Use the resolved params
   })
+
   const heroText = response.items[0].fields.heroTitleWords as string[]
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
