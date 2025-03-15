@@ -6,7 +6,7 @@ export default function StudentMember() {
         An JM is a novice counselor who is pursuing or has just completed their
         degree in Counseling or a related field and is interested in gaining
         experience and learning from other counselors. Please note that members
-        with JM status are not licensed and are not listed in the ACT online
+        with JM status are not certified and are not listed in the ACT online
         registry.
         <span className='mt-3 block'>Annual fee: Free of charge</span>
       </p>

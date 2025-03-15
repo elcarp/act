@@ -6,7 +6,7 @@ export default function AssociatedMember() {
         An AM is an individual in a field other than counseling with an interest
         in therapy, psychology, or mental health who has completed at least one
         ACT-approved course. Please note that members with AM status are not
-        licensed mental health professionals and are not listed in the ACT
+        certified mental health professionals and are not listed in the ACT
         online registry.
         <span className='mt-3 block'>Annual fee: 1,000 THB</span>
       </p>

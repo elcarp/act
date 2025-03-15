@@ -45,24 +45,24 @@ const items = [
     link: 'act-membership-levels#accredited-counselor',
   },
   {
-    title: 'Regisered Counselor (RC)',
+    title: 'Registered Counselor (RC)',
     description:
-      'An RC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with RC status are listed in the ACT online registry. (Licensed)',
+      'An RC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with RC status are listed in the ACT online registry.',
 
     className: 'md:col-span-1',
-    link: 'act-membership-levels#licensed-counselor',
+    link: 'act-membership-levels#registered-counselor',
   },
   {
     title: 'Associate Member (AM)',
     description:
-      'An AM is an individual in a field other than counseling with an interest in therapy, psychology, or mental health who has completed at least one ACT-approved course. (Not a license)',
+      'An AM is an individual in a field other than counseling with an interest in therapy, psychology, or mental health who has completed at least one ACT-approved course.',
     className: 'md:col-span-1',
     link: 'act-membership-levels#associate-member',
   },
   {
     title: 'Junior Member (JM)',
     description:
-      'A JM is a novice counselor who is pursuing or has just completed their degree in Counseling or a related field and is interested in gaining experience and learning from other counselors. (Not a license)',
+      'A JM is a novice counselor who is pursuing or has just completed their degree in Counseling or a related field and is interested in gaining experience and learning from other counselors.',
     className: 'md:col-span-1',
     link: 'act-membership-levels#junior-member',
   },
