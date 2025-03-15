@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Archivo, Anuphan } from 'next/font/google'
+import { Anuphan, Manrope } from 'next/font/google'
 import './globals.css'
 import Nav from '~components/nav'
 import Footer from '~components/footer'
 import { locales } from '~config/i18n'
 
-const archivo = Archivo({
-  weight: ['400'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
 const anuphan = Anuphan({
   weight: ['400', '700'],
   subsets: ['thai'],
+  display: 'swap',
+})
+
+const manrope = Manrope({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
   display: 'swap',
 })
 
@@ -37,9 +37,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     <html lang={(await params).lang}>
       <body
         className={`${
-          (await params).lang == 'th-TH'
-            ? anuphan.className
-            : archivo.className
+          (await params).lang == 'th-TH' ? anuphan.className : manrope.className
         } antialiased`}>
         <Nav />
         {children}
