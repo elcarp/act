@@ -44,7 +44,7 @@ const FAQs = [
     ),
   },
   {
-    question: 'How much does it cost to become a licensed counselor?',
+    question: 'How much does it cost to become an accredited counselor?',
     answer: (
       <div>
         ACT keeps membership fees affordable thanks to the support of the
