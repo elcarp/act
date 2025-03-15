@@ -15,19 +15,19 @@ export default function ContactUs() {
           social media channels.
           <p className='text-center flex justify-center mt-10'>
             <Link
-              href='https://www.facebook.com/'
-              target='_blank'
-              className='mx-2'>
-              <FontAwesomeIcon icon={faInstagram} width={20} />
-            </Link>
-            <Link
-              href='https://www.instagram.com/'
+              href='https://www.facebook.com/share/15mtxxa6gg/?mibextid=wwXIfr'
               target='_blank'
               className='mx-2'>
               <FontAwesomeIcon icon={faFacebook} width={20} />
             </Link>
             <Link
-              href='https://www.linkedin.com/'
+              href='https://www.instagram.com/actcounselors?igsh=bjVuY2MyZ3Y5Njk='
+              target='_blank'
+              className='mx-2'>
+              <FontAwesomeIcon icon={faInstagram} width={20} />
+            </Link>
+            <Link
+              href='https://www.linkedin.com/company/accredited-counselors-of-thailand-act'
               target='_blank'
               className='mx-2'>
               <FontAwesomeIcon icon={faLinkedin} width={20} />
