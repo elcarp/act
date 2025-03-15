@@ -8,7 +8,7 @@ export default function Overview() {
           <div className='bg-gray-300 p-4 font-bold'>Junior Member (JM)</div>
           <div className='bg-gray-300 p-4 font-bold'>Associate Member (AM)</div>
           <div className='bg-gray-300 p-4 font-bold'>
-            Licensed Counselor (LC)
+            Registered Counselor (RC)
           </div>
           <div className='bg-gray-300 p-4 font-bold'>
             Accredited Counselor (AC)

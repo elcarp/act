@@ -42,7 +42,7 @@ export function ApplicationForm() {
                   {[
                     { value: 'JM', label: 'Junior Member (JM)' },
                     { value: 'AM', label: 'Associate Member (AM)' },
-                    { value: 'LC', label: 'Licensed Counselor (LC)' },
+                    { value: 'RC', label: 'Registered Counselor (RC)' },
                     { value: 'AC', label: 'Accredited Counselor (AC)' },
                     { value: 'FM', label: 'Fellow Member (FM)' },
                   ].map((option) => (

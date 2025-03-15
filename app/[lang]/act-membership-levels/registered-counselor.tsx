@@ -1,11 +1,11 @@
-export default function LicensedCounselor() {
+export default function RegisteredCounselor() {
   return (
     <div>
-      <h3 className='text-lg mt-8 font-bold'>Licensed Counselor (LC) </h3>
+      <h3 className='text-lg mt-8 font-bold'>Registered Counselor (RC) </h3>
       <p className='mt-3'>
-        An LC is an experienced counselor with a considerable number of client
+        An RC is an experienced counselor with a considerable number of client
         contact hours who has demonstrated their commitment to ethical,
-        accountable practice. Members with LC status are licensed and listed in
+        accountable practice. Members with RC status are licensed and listed in
         the ACT online registry.
         <span className='mt-3 block'>Annual fee: 2,000 THB </span>
         <span className='mt-3 block'>
@@ -15,7 +15,7 @@ export default function LicensedCounselor() {
       <div className='table rounded-xl bg-slate-200 p-5 mt-4 shadow-lg'>
         <div className='grid grid-cols-2 gap-4'>
           <div>
-            <strong>Licensed Counselor (LC)</strong>
+            <strong>Registered Counselor (RC)</strong>
           </div>
           <div>
             <strong>Requirements</strong>

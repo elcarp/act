@@ -1,10 +1,10 @@
 import AccreditedCounselor from './accredited-counselor'
 import AssociatedMember from './associated-member'
 import FellowMember from './fellow-member'
-import LicensedCounselor from './licensed-counselor'
 import OrganizationalMember from './organizational-member'
 import Overview from './overview'
 import StudentMember from './student-member'
+import RegisteredCounselor from './registered-counselor'
 
 export default function MembershipLevels() {
   return (
@@ -20,8 +20,8 @@ export default function MembershipLevels() {
           <div id='accredited-counselor' className='py-10'>
             <AccreditedCounselor />
           </div>
-          <div id='licensed-counselor' className='py-10'>
-            <LicensedCounselor />
+          <div id='registered-counselor' className='py-10'>
+            <RegisteredCounselor />
           </div>
           <div id='associate-member' className='py-10'>
             <AssociatedMember />

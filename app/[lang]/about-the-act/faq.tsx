@@ -56,7 +56,7 @@ const FAQs = [
             Accredited Counselor (AC) - 4,000 THB (2,500 THB application fee)
           </li>
           <li>
-            Licensed Counselor (LC) - 2,000 THB (1,000 THB application fee)
+            Registered Counselor (RC) - 2,000 THB (1,000 THB application fee)
           </li>
           <li>Associate Member (AM) - 1,000 THB (no application fee)</li>
           <li>Junior Member (JM) - Free of charge (no application fee)</li>

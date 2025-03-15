@@ -48,8 +48,8 @@ const Navbar = () => {
           link: '/act-membership-levels#accredited-counselor',
         },
         {
-          name: 'Licensed Counselor (LC)',
-          link: '/act-membership-levels#licensed-counselor',
+          name: 'Registered Counselor (RC)',
+          link: '/act-membership-levels#registered-counselor',
         },
         {
           name: 'Associate Member (AM)',
