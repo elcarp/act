@@ -7,7 +7,6 @@ import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
 import { Document } from '@contentful/rich-text-types'
 
-
 export const revalidate = 60
 export const dynamicParams = true
 
@@ -35,15 +34,28 @@ export default async function Home({ params }: any) {
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
 
-
   const document = response.items[0].fields.introText as Document
-  console.log(document)
 
+  const blockTitles = [
+    response.items[0].fields.blockTitle1,
+    response.items[0].fields.blockTitle2,
+    response.items[0].fields.blockTitle3,
+  ] as string[]
 
+  const blockContent = [
+    response.items[0].fields.blockContent1,
+    response.items[0].fields.blockContent2,
+    response.items[0].fields.blockContent3,
+  ] as Document[]
+  
   return (
     <>
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
-      <Introduction document={document}/>
+      <Introduction
+        document={document}
+        blockTitles={blockTitles}
+        blockContent={blockContent}
+      />
       <Features />
       <LatestNews />
     </>

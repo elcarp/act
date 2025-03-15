@@ -10,9 +10,14 @@ import { Document } from '@contentful/rich-text-types'
 
 interface Props {
   document: Document
+  blockTitles: string[]
+  blockContent: Document[]
 }
-export default function Introduction({ document }: Props) {
-  console.log(document)
+export default function Introduction({
+  document,
+  blockTitles,
+  blockContent,
+}: Props) {
   const placeholders = [
     'Search for counselor here',
     "Enter counselor's first or last name",
@@ -43,15 +48,11 @@ export default function Introduction({ document }: Props) {
           className=''>
           <div className='max-w-xs'>
             <h2 className='text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white'>
-              Why Accreditation Matters for Counselors
+              {blockTitles[0]}
             </h2>
-            <p className='mt-4 text-left  text-base/6 text-neutral-200'>
-              Registration ensures that counselors meet professional and
-              international standards, providing clients with confidence in
-              their care and promoting ethical practice and accountability.
-              Accreditation enhances your credibility by verifying that you are
-              a qualified counselor.
-            </p>
+            <div className='mt-4 text-left  text-base/6 text-neutral-200'>
+              {documentToReactComponents(blockContent[0])}
+            </div>
           </div>
           <Image
             src={counseling.src}
@@ -63,32 +64,20 @@ export default function Introduction({ document }: Props) {
         </WobbleCard>
         <WobbleCard containerClassName='col-span-1 min-h-[300px] bg-teal-900  '>
           <h2 className='max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white'>
-            Learn About Our Application Process
+            {blockTitles[1]}
           </h2>
-          <p className='mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200'>
-            Our application process meets international standards of recognition
-            and certifies that you are a qualified counselor.
-          </p>
+          <div className='mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200'>
+            {documentToReactComponents(blockContent[1])}
+          </div>
         </WobbleCard>
         <WobbleCard containerClassName='col-span-1 lg:col-span-3 bg-teal-700 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]'>
           <div className='max-w-sm'>
             <h2 className='max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white'>
-              Discover ACT&apos;s Vision & Mission
+              {blockTitles[2]}
             </h2>
-            <p className='mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200'>
-              Accredited Counselors of Thailand (ACT) is an independent,
-              non-profit initiative established in 2024 under the LEAF
-              Foundation, dedicated to offering Thai national and resident
-              counselors the opportunity to to obtain certified accreditation
-              according to international standards through an extensive
-              registration process for individuals and organizations. Our
-              mission is to make accreditation the standard practice in Thailand
-              in order to improve the quality of counseling, ensure
-              accountability, and provide both local and international support
-              for counselors. Please note that while ACT is working towards
-              transferable credits across the APAC region in the future, local
-              laws and licensing rules always apply.
-            </p>
+            <div className='mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200'>
+              {documentToReactComponents(blockContent[2])}
+            </div>
           </div>
           <Image
             src={counseling2.src}
