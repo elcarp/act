@@ -6,8 +6,13 @@ import counseling from '~public/images/counseling.jpg'
 import counseling2 from '~public/images/counseling2.jpg'
 import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { Document } from '@contentful/rich-text-types'
 
-export default function Introduction({ document }: any) {
+interface Props {
+  document: Document
+}
+export default function Introduction({ document }: Props) {
+  console.log(document)
   const placeholders = [
     'Search for counselor here',
     "Enter counselor's first or last name",
