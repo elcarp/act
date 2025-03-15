@@ -124,7 +124,7 @@ const FAQs = [
   {
     question: "What's the difference between a coach and a counselor?",
     answer:
-      'While both coaches and counselors support personal growth, their roles differ significantly. Counselors are trained to address emotional and psychological issues, often working with clients to overcome trauma, mental health challenges, or relational conflicts. This requires formal education, licensing, and adherence to ethical standards. Coaches, on the other hand, focus on helping clients achieve specific goals, such as career advancement or personal development, and are not equipped to address complex mental health issues.',
+      'While both coaches and counselors support personal growth, their roles differ significantly. Counselors are trained to address emotional and psychological issues, often working with clients to overcome trauma, mental health challenges, or relational conflicts. This requires formal education, accreditation, and adherence to ethical standards. Coaches, on the other hand, focus on helping clients achieve specific goals, such as career advancement or personal development, and are not equipped to address complex mental health issues.',
   },
 ]
 
