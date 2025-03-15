@@ -33,10 +33,12 @@ export default async function Home({ params }: any) {
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
 
+  const document = response.items[0].fields.introText
+
   return (
     <>
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
-      <Introduction />
+      <Introduction document={document} />
       <Features />
       <LatestNews />
     </>

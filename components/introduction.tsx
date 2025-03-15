@@ -5,8 +5,9 @@ import WobbleCard from '~components/ui/wobble-card'
 import counseling from '~public/images/counseling.jpg'
 import counseling2 from '~public/images/counseling2.jpg'
 import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-export default function Introduction() {
+export default function Introduction({ document }: any) {
   const placeholders = [
     'Search for counselor here',
     "Enter counselor's first or last name",
@@ -21,13 +22,8 @@ export default function Introduction() {
   }
   return (
     <section className='py-20 gradient-background'>
-      <div className='max-w-2xl mx-auto'>
-        <p className='text-white text-center pb-10 text-lg px-5'>
-          Welcome to the Accredited Counselors of Thailand (ACT), where we
-          advocate for the importance of professional counseling standards. Join
-          us in fostering a community of accredited counselors in Thailand
-          dedicated to quality, excellence, and ethical practice.
-        </p>
+      <div className='max-w-2xl mx-auto text-white text-center pb-10 text-lg px-5'>
+        {documentToReactComponents(document)}
       </div>
       <div className='mb-20 px-5'>
         <PlaceholdersAndVanishInput
