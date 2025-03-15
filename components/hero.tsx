@@ -24,7 +24,10 @@ export default function Hero({ firstLine, secondLine }: Props) {
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1 }}
           />
-          <h1 className='max-w-5xl text-2xl md:text-5xl lg:text-6xl text-center text-white relative z-2'>
+          <h1
+            className={`max-w-5xl text-2xl md:text-5xl ${
+              locale == 'en-US' && 'lg:text-6xl'
+            } text-center text-white relative z-2`}>
             {firstLine[0]}, {firstLine[1]},{' '}
             {locale == 'en-US' ? (
               <span className='font-extrabold'>
