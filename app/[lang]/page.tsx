@@ -5,6 +5,8 @@ import Hero from '~components/hero'
 import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
+import { Document } from '@contentful/rich-text-types'
+
 
 export const revalidate = 60
 export const dynamicParams = true
@@ -33,12 +35,15 @@ export default async function Home({ params }: any) {
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
 
-  const document = response.items[0].fields.introText
+
+  const document = response.items[0].fields.introText as Document
+  console.log(document)
+
 
   return (
     <>
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
-      <Introduction document={document} />
+      <Introduction document={document}/>
       <Features />
       <LatestNews />
     </>
