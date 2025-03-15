@@ -6,6 +6,8 @@ import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
 
+export const revalidate = 60
+export const dynamicParams = true
 
 export default async function Home({ params }: any) {
   const resolvedParams = await params
@@ -24,7 +26,7 @@ export default async function Home({ params }: any) {
 
   const response = await client.getEntries({
     content_type: 'homepageContent',
-    locale: resolvedParams.lang, 
+    locale: resolvedParams.lang,
   })
 
   const heroText = response.items[0].fields.heroTitleWords as string[]
