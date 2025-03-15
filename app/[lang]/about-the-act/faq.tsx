@@ -108,7 +108,7 @@ const FAQs = [
             licensed, which involves completing a specific number of supervised
             hours and professional development. In Thailand, there is currently
             no licensing mandate for counselors, but with ACT&apos;s new
-            licensing board, this may change soon.{' '}
+            accreditation board, this may change soon.{' '}
           </li>
         </ul>
         <p>

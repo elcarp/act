@@ -9,7 +9,7 @@ export default function Features() {
   return (
     <div className='w-full max-w-7xl mx-auto my-20 px-4 md:px-8'>
       <h2 className=' text-bold text-xl text-center md:text-4xl font-bold tracking-tight text-neutral-8000 dark:text-neutral-100'>
-        Unlock Your Potential as a Licensed Counselor
+        Unlock Your Potential as a Registered Counselor
       </h2>
 
       <div className='mt-20 grid cols-1 md:grid-cols-3 gap-4'>
