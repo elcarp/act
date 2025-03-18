@@ -30,7 +30,6 @@ export default async function Home({ params }: any) {
     locale: 'en-US',
   })
 
-  console.log(resolvedParams.lang)
   const heroText = response.items[0].fields.heroTitleWords as string[]
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
