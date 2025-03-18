@@ -10,7 +10,7 @@ import { Document } from '@contentful/rich-text-types'
 export const revalidate = 60
 export const dynamicParams = true
 
-export default async function Home({ params }: any) {
+export default async function Home() {
   // const resolvedParams = await params
 
   const client = contentful.createClient({
