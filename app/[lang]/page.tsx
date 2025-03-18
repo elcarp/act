@@ -11,7 +11,7 @@ export const revalidate = 60
 export const dynamicParams = true
 
 export default async function Home({ params }: any) {
-  const resolvedParams = await params
+  // const resolvedParams = await params
 
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
