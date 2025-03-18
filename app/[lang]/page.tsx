@@ -24,11 +24,10 @@ export default async function Home({ params }: any) {
   } catch (error) {
     console.error(error)
   }
-  const temporaryLocale = resolvedParams.lang !== 'en-US' ? resolvedParams.lang : 'en-US'
 
   const response = await client.getEntries({
     content_type: 'homepageContent',
-    locale: temporaryLocale,
+    locale: 'en-US',
   })
 
   console.log(resolvedParams.lang)
