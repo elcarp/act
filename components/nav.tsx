@@ -124,7 +124,7 @@ const DesktopNav = ({ navItems }: any) => {
           })}
         </Menu>
       </div>
-      <span className='ml-30 cursor-pointer'>{/* <LanguageSwitcher /> */}</span>
+      <span className='ml-20 block cursor-pointer'>&nbsp;</span>
     </motion.div>
   )
 }
