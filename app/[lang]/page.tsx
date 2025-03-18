@@ -24,12 +24,14 @@ export default async function Home({ params }: any) {
   } catch (error) {
     console.error(error)
   }
+  const temporaryLocale = resolvedParams.lang !== 'en-US' ? resolvedParams.lang : 'en-US'
 
   const response = await client.getEntries({
     content_type: 'homepageContent',
-    locale: resolvedParams.lang,
+    locale: temporaryLocale,
   })
 
+  console.log(resolvedParams.lang)
   const heroText = response.items[0].fields.heroTitleWords as string[]
   const heroTextSecondLine = response.items[0].fields
     .heroTitleSecondLine as string
@@ -47,7 +49,7 @@ export default async function Home({ params }: any) {
     response.items[0].fields.blockContent2,
     response.items[0].fields.blockContent3,
   ] as Document[]
-  
+
   return (
     <>
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
