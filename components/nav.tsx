@@ -92,7 +92,7 @@ const DesktopNav = ({ navItems }: any) => {
   return (
     <motion.div
       className={cn(
-        'hidden lg:flex flex-row self-start bg-white dark:bg-neutral-950 items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full',
+        'hidden lg:flex flex-row self-start bg-white items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full',
         'sticky top-40 inset-x-0'
       )}>
       <Logo />
@@ -145,19 +145,13 @@ const MobileNav = ({ navItems }: any) => {
           borderRadius: open ? '4px' : '2rem',
         }}
         key={String(open)}
-        className='flex relative flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-neutral-950  max-w-[calc(100vw-2rem)] mx-auto px-4 py-2'>
+        className='flex relative flex-col lg:hidden w-full justify-between items-center bg-white max-w-[calc(100vw-2rem)] mx-auto px-4 py-2'>
         <div className='flex flex-row justify-between items-center w-full'>
           <Logo />
           {open ? (
-            <IconX
-              className='text-black dark:text-white'
-              onClick={() => setOpen(!open)}
-            />
+            <IconX className='text-black' onClick={() => setOpen(!open)} />
           ) : (
-            <IconMenu2
-              className='text-black dark:text-white'
-              onClick={() => setOpen(!open)}
-            />
+            <IconMenu2 className='text-black' onClick={() => setOpen(!open)} />
           )}
         </div>
 
@@ -169,7 +163,7 @@ const MobileNav = ({ navItems }: any) => {
               }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className='flex rounded-lg absolute top-16 bg-white dark:bg-neutral-950 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8'>
+              className='flex rounded-lg absolute top-16 bg-white inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8'>
               {navItems.map((navItem: any, idx: number) => (
                 <div key={`navItem-${idx}`} className='w-full'>
                   {navItem.children ? (
@@ -178,7 +172,7 @@ const MobileNav = ({ navItems }: any) => {
                     <Link
                       href={navItem.link}
                       onClick={() => handleClick(navItem.link)}
-                      className='relative text-neutral-600 dark:text-neutral-300 cursor-pointer'>
+                      className='relative text-neutral-600 cursor-pointer'>
                       <motion.span className='block'>
                         {navItem.name}
                       </motion.span>
@@ -205,9 +199,9 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
     <motion.div className='overflow-hidden'>
       <button
         onClick={() => setOpen(!open)}
-        className='relative text-neutral-600 dark:text-neutral-300 flex w-full justify-between'>
+        className='relative text-neutral-600 flex w-full justify-between'>
         <motion.span className='block'>{navItem.name}</motion.span>
-        <IconChevronDown className='text-neutral-700 dark:text-neutral-300' />
+        <IconChevronDown className='text-neutral-700' />
       </button>
       <AnimatePresence>
         {open && (
@@ -221,7 +215,7 @@ const MobileChildNavItems = ({ navItem }: { navItem: any }) => {
                 key={`child-${childIdx}`}
                 onClick={() => handleClick(navItem.link)}
                 href={child.link}
-                className='relative text-neutral-600 dark:text-neutral-300'>
+                className='relative text-neutral-600'>
                 <motion.span className='block'>{child.name}</motion.span>
               </Link>
             ))}
@@ -236,7 +230,7 @@ const Logo = () => {
   return (
     <Link
       href='/'
-      className='font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20'>
+      className='font-normal flex space-x-2 items-center text-sm mr-4 text-black px-2 py-1  relative z-20'>
       <Image src={logo.src} alt='logo' width={30} height={30} />
     </Link>
   )
@@ -268,7 +262,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className='relative '>
       <motion.p
         transition={{ duration: 0.3 }}
-        className='cursor-pointer text-neutral-700 dark:text-neutral-300 hover:opacity-[0.9] '>
+        className='cursor-pointer text-neutral-700 hover:opacity-[0.9] '>
         <Link href={link}>{item}</Link>
       </motion.p>
       {active !== null && children && (
@@ -282,7 +276,7 @@ export const MenuItem = ({
                 <motion.div
                   transition={transition}
                   layoutId='active' // layoutId ensures smooth animation
-                  className='bg-white dark:bg-neutral-950 mt-4 backdrop-blur-sm rounded-2xl overflow-hidden  shadow-xl'>
+                  className='bg-white mt-4 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl'>
                   <motion.div
                     layout // layout ensures smooth animation
                     className='w-max h-full p-4'>
@@ -308,7 +302,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className='relative rounded-full dark:bg-neutral-950  bg-white flex justify-center space-x-4 px-4 py-3 '>
+      className='relative rounded-full bg-white flex justify-center space-x-4 px-4 py-3 '>
       {children}
     </nav>
   )
@@ -335,12 +329,8 @@ export const ProductItem = ({
         className='flex-shrink-0 rounded-md shadow-2xl'
       />
       <div>
-        <h4 className='text-base font-normal mb-1 text-black dark:text-white'>
-          {title}
-        </h4>
-        <p className='text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300'>
-          {description}
-        </p>
+        <h4 className='text-base font-normal mb-1 text-black'>{title}</h4>
+        <p className='text-neutral-700 text-sm max-w-[10rem]'>{description}</p>
       </div>
     </Link>
   )
@@ -348,9 +338,7 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link
-      {...rest}
-      className='text-neutral-700 dark:text-neutral-200 hover:text-black '>
+    <Link {...rest} className='text-neutral-700 hover:text-black '>
       {children}
     </Link>
   )
