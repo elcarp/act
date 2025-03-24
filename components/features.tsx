@@ -1,11 +1,23 @@
 'use client'
-
 import { cn } from '~lib/utils'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-export default function Features() {
+interface MembershipLevel {
+  title: string
+  excerpt: string
+  order: number
+}
+
+export default function Features({
+  membershipLevels,
+}: {
+  membershipLevels: MembershipLevel[]
+}) {
+  const sortedMembershipLevels = membershipLevels.sort(
+    (a, b) => a.order - b.order
+  )
   return (
     <div className='w-full max-w-7xl mx-auto my-20 px-4 md:px-8'>
       <h2 className=' text-bold text-xl text-center md:text-4xl font-bold tracking-tight text-neutral-8000'>
@@ -13,13 +25,12 @@ export default function Features() {
       </h2>
 
       <div className='mt-20 grid cols-1 md:grid-cols-3 gap-4'>
-        {items.map((item, index) => (
-          <Link key={index} href={item.link}>
-            <Card
-              className={cn('flex flex-col justify-between', item.className)}>
+        {sortedMembershipLevels.map((item, index) => (
+          <Link key={index} href={item.title}>
+            <Card className='flex flex-col justify-between md:col-span-1'>
               <CardContent>
                 <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
+                <CardDescription>{item.excerpt}</CardDescription>
               </CardContent>
             </Card>
           </Link>
@@ -28,53 +39,6 @@ export default function Features() {
     </div>
   )
 }
-
-const items = [
-  {
-    title: 'Fellow Member (FM)',
-    description:
-      'An FM is a retired counselor who previously held accredited counselor (AC) status and was nominated by other ACT members to be a Fellow Member in their retirement.',
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#fellow-member',
-  },
-  {
-    title: 'Accredited Counselor (AC)',
-    description:
-      'An AC is an advanced counselor with vast experience in the field and a deep understanding of all aspects of counseling. Members with AC status are listed in the ACT online registry.',
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#accredited-counselor',
-  },
-  {
-    title: 'Registered Counselor (RC)',
-    description:
-      'An RC is an experienced counselor with a considerable number of client contact hours who has demonstrated their commitment to ethical, accountable practice. Members with RC status are listed in the ACT online registry.',
-
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#registered-counselor',
-  },
-  {
-    title: 'Associate Member (AM)',
-    description:
-      'An AM is an individual in a field other than counseling with an interest in therapy, psychology, or mental health who has completed at least one ACT-approved course.',
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#associate-member',
-  },
-  {
-    title: 'Junior Member (JM)',
-    description:
-      'A JM is a novice counselor who is pursuing or has just completed their degree in Counseling or a related field and is interested in gaining experience and learning from other counselors.',
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#junior-member',
-  },
-  {
-    title: 'Organizational Member (OM)',
-    description:
-      'We are not accepting applications for OM this year, but details will be announced soon.',
-
-    className: 'md:col-span-1',
-    link: 'act-membership-levels#organizational-member',
-  },
-]
 
 const CardContent = ({
   children,

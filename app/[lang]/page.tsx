@@ -25,28 +25,39 @@ export default async function Home() {
     console.error(error)
   }
 
-  const response = await client.getEntries({
+  const homepageContent = await client.getEntries({
     content_type: 'homepageContent',
     locale: 'en-US',
   })
 
-  const heroText = response.items[0].fields.heroTitleWords as string[]
-  const heroTextSecondLine = response.items[0].fields
+  const membershipLevels = await client.getEntries({
+    content_type: 'membershipLevel',
+    locale: 'en-US',
+  })
+
+  const heroText = homepageContent.items[0].fields.heroTitleWords as string[]
+  const heroTextSecondLine = homepageContent.items[0].fields
     .heroTitleSecondLine as string
 
-  const document = response.items[0].fields.introText as Document
+  const document = homepageContent.items[0].fields.introText as Document
 
   const blockTitles = [
-    response.items[0].fields.blockTitle1,
-    response.items[0].fields.blockTitle2,
-    response.items[0].fields.blockTitle3,
+    homepageContent.items[0].fields.blockTitle1,
+    homepageContent.items[0].fields.blockTitle2,
+    homepageContent.items[0].fields.blockTitle3,
   ] as string[]
 
   const blockContent = [
-    response.items[0].fields.blockContent1,
-    response.items[0].fields.blockContent2,
-    response.items[0].fields.blockContent3,
+    homepageContent.items[0].fields.blockContent1,
+    homepageContent.items[0].fields.blockContent2,
+    homepageContent.items[0].fields.blockContent3,
   ] as Document[]
+
+  const membershipLevelsData = membershipLevels.items.map((item) => ({
+    title: typeof item.fields.title === 'string' ? item.fields.title : '',
+    excerpt: typeof item.fields.excerpt === 'string' ? item.fields.excerpt : '',
+    order: typeof item.fields.order === 'number' ? item.fields.order : 0,
+  }))
 
   return (
     <>
@@ -56,7 +67,7 @@ export default async function Home() {
         blockTitles={blockTitles}
         blockContent={blockContent}
       />
-      <Features />
+      <Features membershipLevels={membershipLevelsData} />
       <LatestNews />
     </>
   )
