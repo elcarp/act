@@ -25,16 +25,21 @@ export default function Features({
       </h2>
 
       <div className='mt-20 grid cols-1 md:grid-cols-3 gap-4'>
-        {sortedMembershipLevels.map((item, index) => (
-          <Link key={index} href={item.title}>
-            <Card className='flex flex-col justify-between md:col-span-1'>
-              <CardContent>
-                <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.excerpt}</CardDescription>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+        {sortedMembershipLevels.map((item, index) => {
+          const formatLink = item.title.replace(/ /g, '-').toLocaleLowerCase()
+          const link = formatLink.slice(0, -5)
+
+          return (
+            <Link key={index} href={`/act-membership-levels#${link}`}>
+              <Card className='flex flex-col justify-between md:col-span-1'>
+                <CardContent>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.excerpt}</CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
