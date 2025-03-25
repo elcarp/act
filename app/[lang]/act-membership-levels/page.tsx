@@ -55,8 +55,12 @@ export default async function MembershipLevels() {
           {finalMembershipLevels &&
             finalMembershipLevels.map((item: Entry<MembershipLevelFields>) => {
               const description = item.fields.fullDescription
+              const formatLink = String(item.fields.title)
+                .replace(/ /g, '-')
+                .toLocaleLowerCase()
+              const link = formatLink.slice(0, -5)
               return (
-                <div key={item.sys.id}>
+                <div key={item.sys.id} id={link}>
                   <h3 className='text-lg mt-8 font-bold'>
                     {String(item.fields.title || 'No Title')}
                   </h3>
