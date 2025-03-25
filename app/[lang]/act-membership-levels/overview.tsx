@@ -5,7 +5,6 @@ type Props = {
 }
 
 export default function Overview({ membershipLevels }: Props) {
-  console.log(membershipLevels)
   return (
     <div>
       <h3 className='text-lg mt-8 font-bold text-center'>Overview</h3>
