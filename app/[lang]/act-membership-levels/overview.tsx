@@ -13,13 +13,21 @@ export default function Overview({ membershipLevels }: Props) {
         <div className='grid grid-cols-6 sticky top-0'>
           <div className='bg-gray-300 p-4 font-bold'>Membership Type</div>
           {membershipLevels.map((item) => {
-            return <div className='bg-gray-300 p-4 font-bold'>{item.title}</div>
+            return (
+              <div key={item.order} className='bg-gray-300 p-4 font-bold'>
+                {item.title}
+              </div>
+            )
           })}
         </div>
         <div className='grid grid-cols-6'>
           <div className='bg-white p-4 font-semibold'>Education Level</div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.educationLevel}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.educationLevel}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
@@ -27,7 +35,9 @@ export default function Overview({ membershipLevels }: Props) {
           </div>
           {membershipLevels.map((item) => {
             return (
-              <div className='bg-white p-4'>{item.minimumYearsInTheField}</div>
+              <div key={item.order} className='bg-white p-4'>
+                {item.minimumYearsInTheField}
+              </div>
             )
           })}
 
@@ -38,7 +48,9 @@ export default function Overview({ membershipLevels }: Props) {
           </div>
           {membershipLevels.map((item) => {
             return (
-              <div className='bg-white p-4'>{item.minimumTrainingHours}</div>
+              <div key={item.order} className='bg-white p-4'>
+                {item.minimumTrainingHours}
+              </div>
             )
           })}
 
@@ -47,7 +59,11 @@ export default function Overview({ membershipLevels }: Props) {
             <em className='block mt-3'>Form C</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.clientContactHours}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.clientContactHours}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
@@ -55,19 +71,31 @@ export default function Overview({ membershipLevels }: Props) {
             <em className='block mt-3'>Form D</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.nonContactHours}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.nonContactHours}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>Interview</div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.interview}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.interview}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
             Supervision <em className='block mt-3'>Form E</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.supervision}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.supervision}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
@@ -75,7 +103,9 @@ export default function Overview({ membershipLevels }: Props) {
           </div>
           {membershipLevels.map((item) => {
             return (
-              <div className='bg-white p-4'>{item.supervisorReference}</div>
+              <div key={item.order} className='bg-white p-4'>
+                {item.supervisorReference}
+              </div>
             )
           })}
 
@@ -83,40 +113,64 @@ export default function Overview({ membershipLevels }: Props) {
             Case study <em className='block mt-3'>Form G</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.caseStudy}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.caseStudy}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
             Reflective essay <em className='block mt-3'>Form H</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.reflectiveEssay}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.reflectiveEssay}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
             Annual Supervision <em className='block mt-3'>Form I-1</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.annualSupervision}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.annualSupervision}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
             Annual CPD <em className='block mt-3'>Form I-2</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.annualCpd}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.annualCpd}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>
             Annual Activity <em className='block mt-3'>Form I-3</em>
           </div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.annualActivity}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.annualActivity}
+              </div>
+            )
           })}
 
           <div className='bg-white p-4 font-semibold'>Audit</div>
           {membershipLevels.map((item) => {
-            return <div className='bg-white p-4'>{item.audit}</div>
+            return (
+              <div key={item.order} className='bg-white p-4'>
+                {item.audit}
+              </div>
+            )
           })}
         </div>
       </div>
