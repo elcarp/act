@@ -28,6 +28,9 @@ export interface MembershipLevelFields extends contentful.EntrySkeletonType {
   order: number
 }
 
+export const revalidate = 60
+export const dynamicParams = true
+
 export default async function MembershipLevels() {
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
