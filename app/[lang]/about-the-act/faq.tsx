@@ -14,7 +14,6 @@ export default function FAQ({ faqs }: { faqs: FAQItem[] }) {
     <div className='mx-auto grid w-full'>
       <div className='mx-auto mt-10 w-full max-w-3xl'>
         {faqs.map((item) => {
-          console.log(item)
           return (
             <FAQItem
               key={item.fields.order}
