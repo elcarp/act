@@ -7,28 +7,56 @@ import counseling2 from '~public/images/counseling2.jpg'
 import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
+import { Entry } from 'contentful'
 
 interface Props {
   document: Document
   blockTitles: string[]
   blockContent: Document[]
+  counselors: Entry[]
 }
 export default function Introduction({
   document,
   blockTitles,
   blockContent,
+  counselors,
 }: Props) {
+  const [counselor, setCounselor] = React.useState('')
+  const [showResults, setShowResults] = React.useState(false)
+
   const placeholders = [
     'Search for counselor here',
     "Enter counselor's first or last name",
   ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
+    setCounselor(e.target.value)
   }
+
+  type ContentfulEntry = {
+    fields?: Record<string, any>
+  }
+
+  function fieldContainsValue(
+    entry: ContentfulEntry,
+    searchTerm: string
+  ): boolean {
+    if (!entry || !entry.fields) return false
+
+    const lowerSearch = searchTerm.toLowerCase()
+
+    return Object.values(entry.fields).some((value) =>
+      String(value).toLowerCase().includes(lowerSearch)
+    )
+  }
+
+  const matchingCounselors = counselors.filter((entry) =>
+    fieldContainsValue(entry, counselor)
+  )
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('submitted')
+    setShowResults(true)
   }
   return (
     <section className='py-20 gradient-background'>
@@ -41,6 +69,26 @@ export default function Introduction({
           onChange={handleChange}
           onSubmit={onSubmit}
         />
+        {showResults && (
+          <>
+            {matchingCounselors.length > 0 ? (
+              <div className='text-center mt-10'>
+                {matchingCounselors.map((entry, i) => (
+                  <div key={i} className='text-white'>
+                    {String(entry.fields.firstName || '')}{' '}
+                    {String(entry.fields.lastName || '')} –{' '}
+                    {String(entry.fields.city || '')},{' '}
+                    {String(entry.fields.country || '')}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className='text-white text-center mt-10'>
+                No matching counselors found.
+              </div>
+            )}
+          </>
+        )}
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-4xl mx-auto w-full px-3'>
         <WobbleCard
