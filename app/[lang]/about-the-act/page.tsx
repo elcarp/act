@@ -41,7 +41,6 @@ export default async function About() {
     content_type: 'aboutPageContent',
     locale: 'en-US',
   })
-  console.log(aboutPageContent)
 
   const sortedFAQs = FAQs.items
     .map((item) => ({
