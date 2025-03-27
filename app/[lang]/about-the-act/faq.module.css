@@ -1,0 +1,12 @@
+.answer ul {
+  margin-top: 1rem;
+  @apply list-disc list-outside pl-5;
+}
+
+.answer li {
+  margin-bottom: 1rem;
+}
+
+.answer p {
+  display: inline;
+}
