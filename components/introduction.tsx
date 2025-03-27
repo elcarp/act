@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 'use client'
 import Image from 'next/image'
 import React from 'react'
@@ -8,6 +10,7 @@ import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
 import { Entry } from 'contentful'
+
 
 interface Props {
   document: Document
@@ -75,10 +78,8 @@ export default function Introduction({
               <div className='text-center mt-10'>
                 {matchingCounselors.map((entry, i) => (
                   <div key={i} className='text-white'>
-                    {String(entry.fields.firstName || '')}{' '}
-                    {String(entry.fields.lastName || '')} –{' '}
-                    {String(entry.fields.city || '')},{' '}
-                    {String(entry.fields.country || '')}
+                    {String(entry.fields.firstName || '')} {String(entry.fields.lastName || '')} –{' '}
+                    {String(entry.fields.city || '')}, {String(entry.fields.country || '')}
                   </div>
                 ))}
               </div>
