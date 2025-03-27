@@ -1,0 +1,7 @@
+.aboutPage h3 {
+  @apply text-lg mt-8 font-bold;
+}
+
+.aboutPage p {
+  @apply mt-3;
+}
