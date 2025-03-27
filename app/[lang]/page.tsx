@@ -11,8 +11,6 @@ export const revalidate = 60
 export const dynamicParams = true
 
 export default async function Home() {
-  // const resolvedParams = await params
-
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
@@ -35,11 +33,17 @@ export default async function Home() {
     locale: 'en-US',
   })
 
+  const counselors = await client.getEntries({
+    content_type: 'counselor',
+    locale: 'en-US',
+  })
+
   const heroText = homepageContent.items[0].fields.heroTitleWords as string[]
   const heroTextSecondLine = homepageContent.items[0].fields
     .heroTitleSecondLine as string
 
   const document = homepageContent.items[0].fields.introText as Document
+
 
   const blockTitles = [
     homepageContent.items[0].fields.blockTitle1,
@@ -66,6 +70,7 @@ export default async function Home() {
         document={document}
         blockTitles={blockTitles}
         blockContent={blockContent}
+        counselors={counselors.items}
       />
       <Features membershipLevels={membershipLevelsData} />
       <LatestNews />
