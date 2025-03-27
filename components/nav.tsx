@@ -22,7 +22,7 @@ const Navbar = () => {
       link: '/about-the-act',
       children: [
         {
-          name: 'What is an ACT counseling accreditation?',
+          name: 'What is ACT Accreditation?',
           link: '/about-the-act',
         },
         {
