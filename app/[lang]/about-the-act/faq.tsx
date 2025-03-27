@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, JSX } from 'react'
+import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
 import { cn } from '~lib/utils'
@@ -7,7 +7,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
 import styles from './faq.module.css'
 import type { FAQItem } from './page'
-
 
 export default function FAQ({ faqs }: { faqs: FAQItem[] }) {
   const [open, setOpen] = useState<string | null>(null)
