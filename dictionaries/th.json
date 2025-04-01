@@ -1,4 +1,20 @@
 {
   "learn_more": "เรียนรู้เพิ่มเติม",
-  "apply": "สมัครสมาชิก"
+  "apply": "สมัครสมาชิก",
+  "nav": {
+    "about": "เกี่ยวกับ ACT",
+    "what_is_act_accreditation": "การรับรองมาตรฐานอาชีพนักจิตวิทยาการปรึกษา ACT คืออะไร?",
+    "faqs": "คำถามที่พบบ่อย (FAQs)",
+    "partnerships": "พันธมิตร",
+    "act_membership_levels": "สมาชิก ACT",
+    "fellow_member": "สมาชิกเกียรติคุณ (Fellow Member - FM)",
+    "accredited_counselor": "นักจิตวิทยาการปรึกษารับรองมาตรฐานอาชีพ (Accredited Counselor - AC)",
+    "registered_counselor": "นักจิตวิทยาการปรึกษาลงทะเบียนมาตรฐานอาชีพ(Registered Counselor - RC)",
+    "associate_member": "สมาชิกสมทบ (Associate Member - AM)",
+    "junior_member": "สมาขิกระดับต้น (Junior Member - JM)",
+    "organizational_member": "สมาชิกองค์กร (Organizational Member - OM)",
+    "overview": "ภาพรวม",
+    "apply": "สมัครสมาชิก",
+    "contact": "ติดต่อเรา"
+  }
 }

@@ -1,5 +1,21 @@
 {
   "learn_more": "Learn more",
-  "apply": "apply"
+  "apply": "apply",
+  "nav": {
+    "about": "About the ACT",
+    "what_is_act_accreditation": "What is ACT Accreditation?",
+    "faqs": "FAQs",
+    "partnerships": "Partnerships",
+    "act_membership_levels": "ACT Membership Levels",
+    "fellow_member": "Fellow Member (FM)",
+    "accredited_counselor": "Accredited Counselor (AC)",
+    "registered_counselor": "Registered Counselor (RC)",
+    "associate_member": "Associate Member (AM)",
+    "junior_member": "Junior Member (JM)",
+    "organizational_member": "Organizational Member (OM)",
+    "overview": "Overview",
+    "apply": "Apply",
+    "contact": "Contact Us"
+  }
 }
 

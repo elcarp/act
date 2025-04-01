@@ -6,12 +6,29 @@ import { IconChevronDown, IconMenu2, IconX } from '@tabler/icons-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '~public/images/act-logo.png'
 import LanguageSwitcher from './language-switcher'
 import { useRouter, useParams } from 'next/navigation'
 
-
+interface Dictionary {
+  nav: {
+    what_is_act_accreditation: string
+    act_membership_levels: string
+    contact: string
+    overview: string
+    organizational_member: string
+    junior_member: string
+    associate_member: string
+    registered_counselor: string
+    accredited_counselor: string
+    fellow_member: string
+    partnerships: string
+    faqs: string
+    about: string
+    apply: string
+  }
+}
 export default function Nav() {
   return <Navbar />
 }
@@ -19,67 +36,83 @@ export default function Nav() {
 const Navbar = () => {
   const params = useParams()
   const locale = params && params.lang
+  const lang = locale?.includes('en') ? 'en' : 'th'
+
+  const [dict, setDict] = useState<Dictionary | null>(null)
+
+  useEffect(() => {
+    async function loadDict() {
+      const dictionary = await import(`~dictionaries/${lang}.json`).then(
+        (mod) => mod.default
+      )
+      setDict(dictionary)
+    }
+
+    loadDict()
+  }, [lang])
+
+  if (!dict) return null
 
   const localeLink = locale !== 'en-US' ? `/${locale}` : ''
   const navItems = [
     {
-      name: 'About the ACT',
+      name: `${dict.nav.about}`,
       link: `${localeLink}/about-the-act`,
       children: [
         {
-          name: 'What is ACT Accreditation?',
+          name: `${dict.nav.what_is_act_accreditation}`,
           link: `${localeLink}/about-the-act`,
         },
         {
-          name: 'FAQs',
+          name: `${dict.nav.faqs}`,
           link: `${localeLink}/about-the-act#faq`,
         },
         {
-          name: 'Partnerships',
+          name: `${dict.nav.partnerships}`,
           link: `${localeLink}/about-the-act#partnerships`,
         },
       ],
     },
     {
-      name: 'ACT Membership Levels',
+      name: `${dict.nav.act_membership_levels}`,
       link: `${localeLink}/act-membership-levels`,
       children: [
         {
-          name: 'Fellow Member (FM)',
+          name: `${dict.nav.fellow_member}`,
           link: `${localeLink}/act-membership-levels#fellow-member`,
         },
         {
-          name: 'Accredited Counselor (AC)',
+          name: `${dict.nav.accredited_counselor}`,
           link: `${localeLink}/act-membership-levels#accredited-counselor`,
         },
         {
-          name: 'Registered Counselor (RC)',
+          name: `${dict.nav.registered_counselor}`,
           link: `${localeLink}/act-membership-levels#registered-counselor`,
         },
         {
-          name: 'Associate Member (AM)',
+          name: `${dict.nav.associate_member}`,
           link: `${localeLink}/act-membership-levels#associate-member`,
         },
         {
-          name: 'Junior Member (JM)',
+          name: `${dict.nav.junior_member}`,
           link: `${localeLink}/act-membership-levels#junior-member`,
         },
         {
-          name: 'Organizational Member (OM)',
+          name: `${dict.nav.organizational_member}`,
           link: `${localeLink}/act-membership-levels#organizational-member`,
         },
         {
-          name: 'Overview',
+          name: `${dict.nav.overview}`,
           link: `${localeLink}/act-membership-levels#overview`,
         },
       ],
     },
     {
-      name: 'Apply',
+      name: `${dict.nav.apply}`,
       link: `${localeLink}/apply`,
     },
     {
-      name: 'Contact Us',
+      name: `${dict.nav.contact}`,
       link: `${localeLink}/contact-us`,
     },
   ]
