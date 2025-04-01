@@ -20,7 +20,7 @@ const Navbar = () => {
   const params = useParams()
   const locale = params && params.lang
 
-  const localeLink = locale !== 'en-US' ? `${locale}/` : ''
+  const localeLink = locale !== 'en-US' ? `/${locale}` : ''
   const navItems = [
     {
       name: 'About the ACT',
