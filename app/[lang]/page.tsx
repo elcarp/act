@@ -15,10 +15,6 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
-type Dictionary = {
-  welcome: string
-  hello: string
-}
 
 export default async function Home({ params }: any) {
   const locale = (await params).lang
