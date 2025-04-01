@@ -15,6 +15,11 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }))
 }
 
+type Dictionary = {
+  welcome: string
+  hello: string
+}
+
 export default async function Home({ params }: any) {
   const locale = (await params).lang
 
@@ -73,6 +78,10 @@ export default async function Home({ params }: any) {
 
   return (
     <>
+      {/* <div>
+        <h1>{dict.welcome}</h1>
+        <p>{dict.hello}</p>
+      </div> */}
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
       <Introduction
         document={document}

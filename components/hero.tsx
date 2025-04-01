@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ColourfulText from '~components/ui/colourful-text'
 import { motion } from 'motion/react'
 import hero from '~public/images/hero.jpg'
@@ -10,9 +10,28 @@ interface Props {
   firstLine: string[]
   secondLine: string
 }
+interface Dictionary {
+  [key: string]: string | Dictionary
+}
+
 export default function Hero({ firstLine, secondLine }: Props) {
   const params = useParams()
   const locale = params && params.lang
+  const lang = locale?.includes('en') ? 'en' : 'th'
+  const [dict, setDict] = useState<Dictionary | null>(null)
+
+  useEffect(() => {
+    async function loadDict() {
+      const dictionary = await import(`~dictionaries/${lang}.json`).then(
+        (mod) => mod.default
+      )
+      setDict(dictionary)
+    }
+
+    loadDict()
+  }, [lang])
+
+  if (!dict) return null
   return (
     <>
       <div className='h-screen-1/2 shadow-2xl w-full flex flex-wrap items-center justify-center relative overflow-hidden bg-teal-800'>
@@ -40,13 +59,13 @@ export default function Hero({ firstLine, secondLine }: Props) {
           </h1>
           <div className='mt-10 mx-auto flex w-96 justify-center'>
             <Link href='/about-the-act'>
-              <button className='w-40 mx-2 px-8 py-2 rounded-md bg-transparent text-white font-bold transition duration-200 hover:bg-teal-500 border-2 border-teal-500'>
-                Learn More
+              <button className='mx-2 px-8 py-2 rounded-md bg-transparent text-white font-bold transition duration-200 hover:bg-teal-500 border-2 border-teal-500'>
+                {typeof dict?.learn_more === 'string' ? dict.learn_more : 'Learn More'}
               </button>
             </Link>
             <Link href='/apply'>
-              <button className='w-40 mx-2 px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-transparent border-2 border-transparent hover:border-teal-500'>
-                Apply
+              <button className='mx-2 px-8 py-2 rounded-md bg-teal-500 text-white font-bold transition duration-200 hover:bg-transparent border-2 border-transparent hover:border-teal-500'>
+                {typeof dict?.apply === 'string' ? dict.apply : 'Apply'}
               </button>
             </Link>
           </div>

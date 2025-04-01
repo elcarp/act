@@ -9,73 +9,78 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
 import LanguageSwitcher from './language-switcher'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
+
 
 export default function Nav() {
   return <Navbar />
 }
 
 const Navbar = () => {
+  const params = useParams()
+  const locale = params && params.lang
+
+  const localeLink = locale !== 'en-US' ? `${locale}/` : ''
   const navItems = [
     {
       name: 'About the ACT',
-      link: '/about-the-act',
+      link: `${localeLink}/about-the-act`,
       children: [
         {
           name: 'What is ACT Accreditation?',
-          link: '/about-the-act',
+          link: `${localeLink}/about-the-act`,
         },
         {
           name: 'FAQs',
-          link: '/about-the-act#faq',
+          link: `${localeLink}/about-the-act#faq`,
         },
         {
           name: 'Partnerships',
-          link: '#',
+          link: `${localeLink}/about-the-act#partnerships`,
         },
       ],
     },
     {
       name: 'ACT Membership Levels',
-      link: '/act-membership-levels',
+      link: `${localeLink}/act-membership-levels`,
       children: [
         {
           name: 'Fellow Member (FM)',
-          link: '/act-membership-levels#fellow-member',
+          link: `${localeLink}/act-membership-levels#fellow-member`,
         },
         {
           name: 'Accredited Counselor (AC)',
-          link: '/act-membership-levels#accredited-counselor',
+          link: `${localeLink}/act-membership-levels#accredited-counselor`,
         },
         {
           name: 'Registered Counselor (RC)',
-          link: '/act-membership-levels#registered-counselor',
+          link: `${localeLink}/act-membership-levels#registered-counselor`,
         },
         {
           name: 'Associate Member (AM)',
-          link: '/act-membership-levels#associate-member',
+          link: `${localeLink}/act-membership-levels#associate-member`,
         },
         {
           name: 'Junior Member (JM)',
-          link: '/act-membership-levels#junior-member',
+          link: `${localeLink}/act-membership-levels#junior-member`,
         },
         {
           name: 'Organizational Member (OM)',
-          link: '/act-membership-levels#organizational-member',
+          link: `${localeLink}/act-membership-levels#organizational-member`,
         },
         {
           name: 'Overview',
-          link: '/act-membership-levels#overview',
+          link: `${localeLink}/act-membership-levels#overview`,
         },
       ],
     },
     {
       name: 'Apply',
-      link: '/apply',
+      link: `${localeLink}/apply`,
     },
     {
       name: 'Contact Us',
-      link: '/contact-us',
+      link: `${localeLink}/contact-us`,
     },
   ]
 
