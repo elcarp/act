@@ -1,9 +1,12 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import OrganizationalMember from './organizational-member'
 import Overview from './overview'
 import * as contentful from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
 import { Entry } from 'contentful'
+import { locales } from '~config/i18n'
 
 export interface MembershipLevelFields extends contentful.EntrySkeletonType {
   title: string
@@ -31,7 +34,14 @@ export interface MembershipLevelFields extends contentful.EntrySkeletonType {
 export const revalidate = 60
 export const dynamicParams = true
 
-export default async function MembershipLevels() {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }))
+}
+
+export default async function MembershipLevels({ params }: any) {
+  const locale = (await params).lang
+
+  const finalLocale = locale.includes('en') ? 'en-US' : 'th-TH'
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
@@ -40,7 +50,7 @@ export default async function MembershipLevels() {
 
   const membershipLevels = await client.getEntries<MembershipLevelFields>({
     content_type: 'membershipLevel',
-    locale: 'en-US',
+    locale: finalLocale,
   })
   const sortedMembershipLevels = membershipLevels.items.sort((a, b) => {
     return (Number(a.fields.order) ?? 0) - (Number(b.fields.order) ?? 0)

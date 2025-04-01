@@ -1,8 +1,11 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import FAQ from './faq'
 import * as contentful from 'contentful'
 import styles from './styles.module.css'
 import { Document } from '@contentful/rich-text-types'
+import { locales } from '~config/i18n'
 
 export interface FAQItem {
   fields: {
@@ -22,7 +25,14 @@ interface AboutPageContent {
 export const revalidate = 60
 export const dynamicParams = true
 
-export default async function About() {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }))
+}
+
+export default async function About({ params }: any) {
+  const locale = (await params).lang
+
+  const finalLocale = locale.includes('en') ? 'en-US' : 'th-TH'
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
@@ -31,7 +41,7 @@ export default async function About() {
 
   const FAQs = await client.getEntries({
     content_type: 'faq',
-    locale: 'en-US',
+    locale: finalLocale,
   })
 
   const aboutPageContent = await client.getEntries<{
@@ -39,7 +49,7 @@ export default async function About() {
     contentTypeId: string
   }>({
     content_type: 'aboutPageContent',
-    locale: 'en-US',
+    locale: finalLocale,
   })
 
   const sortedFAQs = FAQs.items
