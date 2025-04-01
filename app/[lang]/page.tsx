@@ -74,10 +74,6 @@ export default async function Home({ params }: any) {
 
   return (
     <>
-      {/* <div>
-        <h1>{dict.welcome}</h1>
-        <p>{dict.hello}</p>
-      </div> */}
       <Hero firstLine={heroText} secondLine={heroTextSecondLine} />
       <Introduction
         document={document}
