@@ -3,6 +3,7 @@ import { cn } from '~lib/utils'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 interface MembershipLevel {
   title: string
@@ -18,10 +19,15 @@ export default function Features({
   const sortedMembershipLevels = membershipLevels.sort(
     (a, b) => a.order - b.order
   )
+  const params = useParams()
+  const locale = params && params.lang
+
   return (
     <div className='w-full max-w-7xl mx-auto my-20 px-4 md:px-8'>
       <h2 className=' text-bold text-xl text-center md:text-4xl font-bold tracking-tight text-neutral-8000'>
-        Unlock Your Potential as a Registered Counselor
+        {locale == 'th-TH'
+          ? 'ปลดล็อกศักยภาพของคุณในการเป็นนักจิตวิทยาการปรึกษรับรองมาตรฐานอาชีพ'
+          : 'Unlock Your Potential as a Registered Counselor'}
       </h2>
 
       <div className='mt-20 grid cols-1 md:grid-cols-3 gap-4'>
