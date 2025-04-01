@@ -8,7 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '~public/images/act-logo.png'
-// import LanguageSwitcher from './language-switcher'
+import LanguageSwitcher from './language-switcher'
 import { useRouter } from 'next/navigation'
 
 export default function Nav() {
@@ -124,7 +124,9 @@ const DesktopNav = ({ navItems }: any) => {
           })}
         </Menu>
       </div>
-      <span className='ml-20 block cursor-pointer'>&nbsp;</span>
+      <span className='block cursor-pointer'>
+        <LanguageSwitcher />
+      </span>
     </motion.div>
   )
 }
