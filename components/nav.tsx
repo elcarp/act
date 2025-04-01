@@ -156,6 +156,9 @@ const MobileNav = ({ navItems }: any) => {
             <IconMenu2 className='text-black' onClick={() => setOpen(!open)} />
           )}
         </div>
+        <div className='text-right w-full mt-1 mb-2'>
+          <LanguageSwitcher />
+        </div>
 
         <AnimatePresence>
           {open && (
