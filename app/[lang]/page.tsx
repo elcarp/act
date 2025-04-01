@@ -6,11 +6,20 @@ import Introduction from '~components/introduction'
 import LatestNews from '~components/latest-news'
 import * as contentful from 'contentful'
 import { Document } from '@contentful/rich-text-types'
+import { locales } from '~config/i18n'
 
 export const revalidate = 60
 export const dynamicParams = true
 
-export default async function Home() {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }))
+}
+
+export default async function Home({ params }: any) {
+  const locale = (await params).lang
+
+  const finalLocale = locale.includes('en') ? 'en-US' : 'th-TH'
+
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
@@ -25,17 +34,17 @@ export default async function Home() {
 
   const homepageContent = await client.getEntries({
     content_type: 'homepageContent',
-    locale: 'en-US',
+    locale: finalLocale,
   })
 
   const membershipLevels = await client.getEntries({
     content_type: 'membershipLevel',
-    locale: 'en-US',
+    locale: finalLocale,
   })
 
   const counselors = await client.getEntries({
     content_type: 'counselor',
-    locale: 'en-US',
+    locale: finalLocale,
   })
 
   const heroText = homepageContent.items[0].fields.heroTitleWords as string[]
@@ -43,7 +52,6 @@ export default async function Home() {
     .heroTitleSecondLine as string
 
   const document = homepageContent.items[0].fields.introText as Document
-
 
   const blockTitles = [
     homepageContent.items[0].fields.blockTitle1,
