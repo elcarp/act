@@ -1,6 +1,39 @@
 'use client'
 
+import { useParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
+
+interface Dictionary {
+  nav: {
+    organizational_member: string
+    junior_member: string
+    associate_member: string
+    registered_counselor: string
+    accredited_counselor: string
+    fellow_member: string
+  }
+}
+
 export function ApplicationForm() {
+  const params = useParams()
+  const locale = params && params.lang
+
+  const lang = locale?.includes('en') ? 'en' : 'th'
+  const [dict, setDict] = useState<Dictionary | null>(null)
+
+  useEffect(() => {
+    async function loadDict() {
+      const dictionary = await import(`~dictionaries/${lang}.json`).then(
+        (mod) => mod.default
+      )
+      setDict(dictionary)
+    }
+
+    loadDict()
+  }, [lang])
+
+  if (!dict) return null
+
   return (
     <div className='bg-gray-100 dark:bg-neutral-900 w-full flex items-center justify-center'>
       <div className='flex relative px-4 z-20 items-center w-full justify-center py-10'>
@@ -12,7 +45,7 @@ export function ApplicationForm() {
                 method='POST'
                 className='space-y-4'>
                 <label htmlFor='name' className='block text-sm font-medium'>
-                  Full Name
+                  {locale == 'th-TH' ? 'ชื่อ' : 'Full Name'}
                 </label>
                 <input
                   id='name'
@@ -24,7 +57,7 @@ export function ApplicationForm() {
                 />
 
                 <label htmlFor='email' className='block text-sm font-medium'>
-                  Email address
+                  {locale == 'th-TH' ? 'อีเมล' : 'Email address'}
                 </label>
                 <input
                   id='email'
@@ -36,15 +69,17 @@ export function ApplicationForm() {
                 />
 
                 <label className='block text-sm font-medium'>
-                  Membership Level
+                  {locale == 'th-TH'
+                    ? 'ประเภทสมาชิกที่สนใจสมัคร '
+                    : 'Membership Level'}
                 </label>
                 <div className='space-y-2'>
                   {[
-                    { value: 'JM', label: 'Junior Member (JM)' },
-                    { value: 'AM', label: 'Associate Member (AM)' },
-                    { value: 'RC', label: 'Registered Counselor (RC)' },
-                    { value: 'AC', label: 'Accredited Counselor (AC)' },
-                    { value: 'FM', label: 'Fellow Member (FM)' },
+                    { value: 'JM', label: `${dict.nav.junior_member}` },
+                    { value: 'AM', label: `${dict.nav.associate_member}` },
+                    { value: 'RC', label: `${dict.nav.registered_counselor}` },
+                    { value: 'AC', label: `${dict.nav.accredited_counselor}` },
+                    { value: 'FM', label: `${dict.nav.fellow_member}` },
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -63,7 +98,9 @@ export function ApplicationForm() {
                 <label
                   htmlFor='message'
                   className='block text-sm font-medium pt-8'>
-                  Questions or concerns
+                  {locale == 'th-TH'
+                    ? 'คำถามหรือข้อสงสัย'
+                    : 'Questions or concerns'}
                 </label>
                 <textarea
                   rows={5}
