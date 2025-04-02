@@ -76,7 +76,9 @@ export default async function About({ params }: any) {
       <section id='faq' className='py-20'>
         <div className='max-w-3xl mx-auto px-10'>
           <h2 className='text-2xl md:text-5xl lg:text-6xl'>
-            Frequently Asked Questions (FAQs) for ACT Membership
+            {locale == 'th-TH'
+              ? 'คำถามที่พบบ่อยเกี่ยวกับการเป็นสมาชิก ACT (FAQs)'
+              : 'Frequently Asked Questions (FAQs) for ACT Membership'}
           </h2>
           <FAQ faqs={sortedFAQs} />
         </div>
