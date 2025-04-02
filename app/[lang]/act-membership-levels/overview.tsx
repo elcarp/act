@@ -26,7 +26,7 @@ export default function Overview({ membershipLevels }: Props) {
   }, [lang])
 
   if (!dict) return null
-  console.log(dict, 'overview')
+
   return (
     <div>
       <h3 className='text-lg mt-8 font-bold text-center'>
