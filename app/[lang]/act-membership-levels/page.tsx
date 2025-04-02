@@ -31,6 +31,36 @@ export interface MembershipLevelFields extends contentful.EntrySkeletonType {
   order: number
 }
 
+export interface MembershipLevelsProps {
+  membership_levels: {
+    membership_type: string
+    education_levels: string
+    minimum_years_in_the_field: string
+    minimum_training_hours_ba_ma_degree_coursework_internships_trainings_workshops_certifications_cpd: string
+    form_b: string
+    client_contact_hours_face_to_face_phone_or_online_counseling_in_an_ongoing_process: string
+    form_c: string
+    non_contact_hours_intervision_team_reporting_readings_practicum_videos_team_meetings_case_referrals_emails_conducting_workshops_trainings: string
+    form_d: string
+    interview: string
+    supervision: string
+    form_e: string
+    supervisor_reference: string
+    form_f: string
+    case_study: string
+    form_g: string
+    reflective_essay: string
+    form_h: string
+    annual_supervision: string
+    form_i_1: string
+    annual_continual_professional_development_cpd: string
+    form_i_2: string
+    annual_activity: string
+    form_i_3: string
+    audit: string
+  }
+}
+
 export const revalidate = 60
 export const dynamicParams = true
 
@@ -42,12 +72,15 @@ export default async function MembershipLevels({ params }: any) {
   const locale = (await params).lang
 
   const finalLocale = locale.includes('en') ? 'en-US' : 'th-TH'
+  const lang = locale.includes('en') ? 'en' : 'th'
+  const dict: Record<string, any> = await import(
+    `~dictionaries/${lang}.json`
+  ).then((module) => module.default)
   const client = contentful.createClient({
     space: `${process.env.CONTENTFUL_SPACE_ID}`,
     environment: 'master',
     accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   })
-
   const membershipLevels = await client.getEntries<MembershipLevelFields>({
     content_type: 'membershipLevel',
     locale: finalLocale,
@@ -63,7 +96,7 @@ export default async function MembershipLevels({ params }: any) {
       <section className='py-20 bg-slate-100'>
         <div className='max-w-3xl mx-auto px-10'>
           <h1 className='text-2xl md:text-5xl lg:text-6xl'>
-            ACT Membership Levels
+            {finalLocale == 'th-TH' ? 'สมาชิก ACT' : 'ACT Membership Levels'}
           </h1>
           {finalMembershipLevels &&
             finalMembershipLevels.map((item: Entry<MembershipLevelFields>) => {
@@ -100,109 +133,151 @@ export default async function MembershipLevels({ params }: any) {
                         <strong>{String(item.fields.title) || '-'}</strong>
                       </div>
                       <div>
-                        <strong>Requirements</strong>
+                        <strong>
+                          {finalLocale == 'th-TH' ? 'ข้อกำหนด' : 'Requirements'}
+                        </strong>
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Education Level
+                        {dict.membership_levels.education_levels}
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.educationLevel) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Minimum years in the field
+                        {dict.membership_levels.minimum_years_in_the_field}
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.minimumYearsInTheField) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Minimum Training Hours (BA/MA degree coursework,
-                        internships, trainings, workshops, certifications, CPD)
-                        <em className='block mt-3'>Form B</em>
+                        {
+                          dict.membership_levels
+                            .minimum_training_hours_ba_ma_degree_coursework_internships_trainings_workshops_certifications_cpd
+                        }
+
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_b}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.minimumTrainingHours) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Client Contact Hours (face to face, phone, or online
-                        counseling in an ongoing process)
-                        <em className='block mt-3'>Form C</em>
+                        {
+                          dict.membership_levels
+                            .client_contact_hours_face_to_face_phone_or_online_counseling_in_an_ongoing_process
+                        }
+
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_c}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.clientContactHours) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Non-Contact Hours (intervision, team reporting,
-                        readings, practicum videos, team meetings, case
-                        referrals, emails, conducting workshops/trainings)
-                        <em className='block mt-3'>Form D</em>
+                        {
+                          dict.membership_levels
+                            .non_contact_hours_intervision_team_reporting_readings_practicum_videos_team_meetings_case_referrals_emails_conducting_workshops_trainings
+                        }
+
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_d}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.nonContactHours) || '-'}
                       </div>
 
-                      <div className='bg-white p-4 rounded-xl'>Interview</div>
+                      <div className='bg-white p-4 rounded-xl'>
+                        {dict.membership_levels.interview}
+                      </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.interview) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Supervision <em className='block mt-3'>Form E</em>
+                        {dict.membership_levels.supervision}{' '}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_e}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.supervision) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Supervisor reference{' '}
-                        <em className='block mt-3'>Form F</em>
+                        {dict.membership_levels.supervisor_reference}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_f}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.supervisorReference) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Case study <em className='block mt-3'>Form G</em>
+                        {dict.membership_levels.case_study}{' '}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_g}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.caseStudy) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Reflective essay <em className='block mt-3'>Form H</em>
+                        {dict.membership_levels.reflective_essay}{' '}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_h}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.reflectiveEssay) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Annual Supervision{' '}
-                        <em className='block mt-3'>Form I-1</em>
+                        {dict.membership_levels.annual_supervision}{' '}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_i_1}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.annualSupervision) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Annual Continual Professional Development (CPD){' '}
-                        <em className='block mt-3'>Form I-2</em>
+                        {
+                          dict.membership_levels
+                            .annual_continual_professional_development_cpd
+                        }
+                        ){' '}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_i_2}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.annualCpd) || '-'}
                       </div>
 
                       <div className='bg-white p-4 rounded-xl'>
-                        Annual Activity <em className='block mt-3'>Form I-3</em>
+                        {dict.membership_levels.annual_activity}
+                        <em className='block mt-3'>
+                          {dict.membership_levels.form_i_3}
+                        </em>
                       </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.annualActivity) || '-'}
                       </div>
 
-                      <div className='bg-white p-4 rounded-xl'>Audit</div>
+                      <div className='bg-white p-4 rounded-xl'>
+                        {dict.membership_levels.audit}
+                      </div>
                       <div className='bg-white p-4 rounded-xl'>
                         {String(item.fields.audit) || '-'}
                       </div>

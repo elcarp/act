@@ -16,5 +16,32 @@
     "overview": "ภาพรวม",
     "apply": "สมัครสมาชิก",
     "contact": "ติดต่อเรา"
+  },
+  "membership_levels": {
+    "membership_type": "ประเภทสมาชิก",
+    "education_levels": "ระดับการศึกษา",
+    "minimum_years_in_the_field": "ประสบการณ์ขั้นต่ำในสาขานี้",
+    "minimum_training_hours_ba_ma_degree_coursework_internships_trainings_workshops_certifications_cpd": "ชั่วโมงการฝึกอบรมขั้นต่ำ (Minimum Training Hours) - หลักสูตรปริญญาตรี/ปริญญาโท, การฝึกงาน การฝึกอบรม เวิร์คช็อป ใบรับรอง/วุฒิอื่น ๆ หรือกิจกรรมพัฒนาอาชีพ",
+    "form_b": "แบบฟอร์ม B",
+    "client_contact_hours_face_to_face_phone_or_online_counseling_in_an_ongoing_process": "ชั่วโมงการให้คำปรึกษา (Client Contact Hours) - การให้คำปรึกษาแบบตัวต่อตัว ทางโทรศัพท์ หรือออนไลน์อย่างต่อเนื่อง",
+    "form_c": "แบบฟอร์ม C",
+    "non_contact_hours_intervision_team_reporting_readings_practicum_videos_team_meetings_case_referrals_emails_conducting_workshops_trainings": "ชั่วโมงการทำงานอื่น ๆ นอกเหนือจากการให้คำปรึกษา (Non-Contact Hours) - intervision, การรายงาน อ่านหนังสือ คลิปวีดีโอสำหรับการศึกษา คิดแผนบำบัด การประชุมทีม ส่งเคสให้กับแพทย์หรือผู้เชี่ยวชาญอื่น ๆ การตอบอีเมล หรือการจัดเวิร์คช็อป/การอบรม",
+    "form_d": "แบบฟอร์ม D",
+    "interview": "การสัมภาษณ์",
+    "supervision": "ชั่วโมงการแนะแนวในการให้คำปรึกษา(Supervision)",
+    "form_e": "แบบฟอร์ม E",
+    "supervisor_reference": "จดหมายอ้างอิงจากผู้แนะแนวในการให้คำปรึกษา (Supervisor reference)",
+    "form_f": "แบบฟอร์ม F",
+    "case_study": "กรณีศึกษา (Case study)",
+    "form_g": "แบบฟอร์ม G",
+    "reflective_essay": "เรียงความสะท้อนความคิด(Reflective essay)",
+    "form_h": "แบบฟอร์ม H",
+    "annual_supervision": "ชั่วโมงการแนะแนวในการให้คำปรึกษาประจำปี ",
+    "form_i_1": "แบบฟอร์ม I-1",
+    "annual_continual_professional_development_cpd": "ชั่วโมงการเข้าร่วมกิจกรรมพัฒนาอาชีพประจำปี (Annual Continual Professional Development (CPD))",
+    "form_i_2": "แบบฟอร์ม I-2",
+    "annual_activity": "กิจกรรมประจำปี (Annual Activity)",
+    "form_i_3": "แบบฟอร์ม I-3",
+    "audit": "การตรวจสอบ (Audit)"
   }
 }

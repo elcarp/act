@@ -1,16 +1,42 @@
+'use client'
+import { useParams } from 'next/navigation'
 import { MembershipLevelFields } from './page'
+import { useEffect, useState } from 'react'
+import { MembershipLevelsProps } from './page'
 
 type Props = {
   membershipLevels: MembershipLevelFields[]
 }
 
 export default function Overview({ membershipLevels }: Props) {
+  const params = useParams()
+  const locale = params && params.lang
+  const lang = locale?.includes('en') ? 'en' : 'th'
+  const [dict, setDict] = useState<MembershipLevelsProps | null>(null)
+
+  useEffect(() => {
+    async function loadDict() {
+      const dictionary = await import(`~dictionaries/${lang}.json`).then(
+        (mod) => mod.default
+      )
+      setDict(dictionary)
+    }
+
+    loadDict()
+  }, [lang])
+
+  if (!dict) return null
+  console.log(dict, 'overview')
   return (
     <div>
-      <h3 className='text-lg mt-8 font-bold text-center'>Overview</h3>
+      <h3 className='text-lg mt-8 font-bold text-center'>
+        {locale == 'th-TH' ? 'ภาพรวม' : 'Overview'}
+      </h3>
       <div className='table rounded-xl bg-slate-200 mt-4 shadow-lg text-xs lg:text-base'>
         <div className='grid grid-cols-6 sticky top-0'>
-          <div className='bg-gray-300 p-4 font-bold'>Membership Type</div>
+          <div className='bg-gray-300 p-4 font-bold'>
+            {dict.membership_levels.membership_type}
+          </div>
           {membershipLevels.map((item) => {
             return (
               <div key={item.order} className='bg-gray-300 p-4 font-bold'>
@@ -20,7 +46,9 @@ export default function Overview({ membershipLevels }: Props) {
           })}
         </div>
         <div className='grid grid-cols-6'>
-          <div className='bg-white p-4 font-semibold'>Education Level</div>
+          <div className='bg-white p-4 font-semibold'>
+            {dict.membership_levels.education_levels}
+          </div>
           {membershipLevels.map((item) => {
             return (
               <div key={item.order} className='bg-white p-4'>
@@ -30,7 +58,7 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Minimum years in the field
+            {dict.membership_levels.minimum_years_in_the_field}
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -41,9 +69,11 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Minimum Training Hours (BA/MA coursework, internships, trainings,
-            certifications, CPD)
-            <em className='block mt-3'>Form B</em>
+            {
+              dict.membership_levels
+                .minimum_training_hours_ba_ma_degree_coursework_internships_trainings_workshops_certifications_cpd
+            }
+            <em className='block mt-3'>{dict.membership_levels.form_b}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -54,8 +84,11 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Client Contact Hours (face to face, phone, or online counseling)
-            <em className='block mt-3'>Form C</em>
+            {
+              dict.membership_levels
+                .client_contact_hours_face_to_face_phone_or_online_counseling_in_an_ongoing_process
+            }
+            <em className='block mt-3'>{dict.membership_levels.form_c}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -66,8 +99,11 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Non-Contact Hours (team reporting, readings, practicum, workshops)
-            <em className='block mt-3'>Form D</em>
+            {
+              dict.membership_levels
+                .non_contact_hours_intervision_team_reporting_readings_practicum_videos_team_meetings_case_referrals_emails_conducting_workshops_trainings
+            }
+            <em className='block mt-3'>{dict.membership_levels.form_d}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -77,7 +113,9 @@ export default function Overview({ membershipLevels }: Props) {
             )
           })}
 
-          <div className='bg-white p-4 font-semibold'>Interview</div>
+          <div className='bg-white p-4 font-semibold'>
+            {dict.membership_levels.interview}
+          </div>
           {membershipLevels.map((item) => {
             return (
               <div key={item.order} className='bg-white p-4'>
@@ -87,7 +125,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Supervision <em className='block mt-3'>Form E</em>
+            {dict.membership_levels.supervision}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_e}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -98,7 +137,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Supervisor reference <em className='block mt-3'>Form F</em>
+            {dict.membership_levels.supervisor_reference}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_f}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -109,7 +149,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Case study <em className='block mt-3'>Form G</em>
+            {dict.membership_levels.case_study}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_g}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -120,7 +161,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Reflective essay <em className='block mt-3'>Form H</em>
+            {dict.membership_levels.reflective_essay}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_h}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -131,7 +173,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Annual Supervision <em className='block mt-3'>Form I-1</em>
+            {dict.membership_levels.annual_supervision}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_i_1}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -142,7 +185,11 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Annual CPD <em className='block mt-3'>Form I-2</em>
+            {
+              dict.membership_levels
+                .annual_continual_professional_development_cpd
+            }{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_i_2}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -153,7 +200,8 @@ export default function Overview({ membershipLevels }: Props) {
           })}
 
           <div className='bg-white p-4 font-semibold'>
-            Annual Activity <em className='block mt-3'>Form I-3</em>
+            {dict.membership_levels.annual_activity}{' '}
+            <em className='block mt-3'>{dict.membership_levels.form_i_3}</em>
           </div>
           {membershipLevels.map((item) => {
             return (
@@ -163,7 +211,9 @@ export default function Overview({ membershipLevels }: Props) {
             )
           })}
 
-          <div className='bg-white p-4 font-semibold'>Audit</div>
+          <div className='bg-white p-4 font-semibold'>
+            {dict.membership_levels.audit}
+          </div>
           {membershipLevels.map((item) => {
             return (
               <div key={item.order} className='bg-white p-4'>

@@ -16,6 +16,32 @@
     "overview": "Overview",
     "apply": "Apply",
     "contact": "Contact Us"
+  },
+  "membership_levels": {
+    "membership_type": "Membership Type",
+    "education_levels": "Education Level",
+    "minimum_years_in_the_field": "Minimum Years in the Field",
+    "minimum_training_hours_ba_ma_degree_coursework_internships_trainings_workshops_certifications_cpd": "Minimum Training Hours (BA/MA Degree, Coursework, Internships, Trainings, Workshops, Certifications, CPD)",
+    "form_b": "Form B",
+    "client_contact_hours_face_to_face_phone_or_online_counseling_in_an_ongoing_process": "Client Contact Hours (Face-to-Face, Phone, or Online Counseling in an Ongoing Process)",
+    "form_c": "Form C",
+    "non_contact_hours_intervision_team_reporting_readings_practicum_videos_team_meetings_case_referrals_emails_conducting_workshops_trainings": "Non-Contact Hours (Intervision, Team Reporting, Readings, Practicum, Videos, Team Meetings, Case Referrals, Emails, Conducting Workshops, Trainings)",
+    "form_d": "Form D",
+    "interview": "Interview",
+    "supervision": "Supervision",
+    "form_e": "Form E",
+    "supervisor_reference": "Supervisor Reference",
+    "form_f": "Form F",
+    "case_study": "Case Study",
+    "form_g": "Form G",
+    "reflective_essay": "Reflective Essay",
+    "form_h": "Form H",
+    "annual_supervision": "Annual Supervision",
+    "form_i_1": "Form I-1",
+    "annual_continual_professional_development_cpd": "Annual Continual Professional Development (CPD)",
+    "form_i_2": "Form I-2",
+    "annual_activity": "Annual Activity",
+    "form_i_3": "Form I-3",
+    "audit": "Audit"
   }
 }
-
