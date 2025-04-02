@@ -53,7 +53,8 @@ const Navbar = () => {
 
   if (!dict) return null
 
-  const localeLink = locale !== 'en-US' ? `/${locale}` : ''
+  const localeLink = locale == 'th-TH' ? `/th-TH` : ''
+
   const navItems = [
     {
       name: `${dict.nav.about}`,
@@ -174,8 +175,8 @@ const MobileNav = ({ navItems }: any) => {
   const [open, setOpen] = useState(false)
 
   function handleClick(link: string) {
-    router.push(`/${link}`)
-    setOpen(!open)
+    router.push(link)
+    setOpen(false)
   }
 
   return (
