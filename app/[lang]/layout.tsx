@@ -18,8 +18,8 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'ACT',
-  description: 'ACT Thailand',
+  title: 'Accredited Counselors of Thailand (ACT) | Professional Counseling Standards',
+  description: 'ACT is a non-profit initiative under the LEAF foundation, dedicated to promoting professional counseling standards and fostering a community of accredited counselors in Thailand committed to excellence and ethical practice.',
 }
 type LayoutProps = {
   children: React.ReactNode
@@ -36,9 +36,8 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={(await params).lang}>
       <body
-        className={`${
-          (await params).lang == 'th-TH' ? anuphan.className : manrope.className
-        } antialiased`}>
+        className={`${(await params).lang == 'th-TH' ? anuphan.className : manrope.className
+          } antialiased`}>
         <Nav />
         {children}
         <Footer />
