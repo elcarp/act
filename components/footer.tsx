@@ -6,12 +6,12 @@ import logo from '~public/images/act-logo.png'
 
 export default function Footer() {
   return (
-    <div className='bg-gray-50 dark:bg-neutral-800 text-center'>
+    <div className='bg-gray-50 text-center'>
       <div className='mb-10 max-w-xl mx-auto text-center'>
         <Logo className='justify-center' />
       </div>
 
-      <p className='mb-4 pt-10 text-sm text-neutral-600 dark:text-neutral-400'>
+      <p className='mb-4 pt-10 text-sm text-neutral-600'>
         &copy; {new Date().getFullYear()} ACT Reserved. Website designed and
         developed by{' '}
         <Link href='https://lisecarpenter.com/' target='_blank'>
@@ -27,7 +27,7 @@ const Logo = ({ className }: { className?: string }) => {
     <Link
       href='/'
       className={cn(
-        'flex items-center justify-center py-6 text-center text-2xl font-bold text-neutral-600 selection:bg-emerald-500 dark:text-gray-100',
+        'flex items-center justify-center py-6 text-center text-2xl font-bold text-neutral-600 selection:bg-emerald-500',
         className
       )}>
       <div className='relative flex h-14 w-14 items-center justify-center rounded-md border text-sm text-white antialiased md:h-6 md:w-6'>
@@ -38,7 +38,7 @@ const Logo = ({ className }: { className?: string }) => {
             height={100}
             width={100}
             alt='Logo'
-            className='block dark:hidden'
+            className='block'
           />
         </div>
       </div>

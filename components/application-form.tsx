@@ -35,9 +35,9 @@ export function ApplicationForm() {
   if (!dict) return null
 
   return (
-    <div className='bg-gray-100 dark:bg-neutral-900 w-full flex items-center justify-center'>
+    <div className='bg-gray-100 w-full flex items-center justify-center'>
       <div className='flex relative px-4 z-20 items-center w-full justify-center py-10'>
-        <div className='mx-auto w-full max-w-lg bg-gray-50 dark:bg-neutral-950 px-4 md:px-10 py-8 shadow-input rounded-3xl'>
+        <div className='mx-auto w-full max-w-lg bg-gray-50 px-4 md:px-10 py-8 shadow-input rounded-3xl'>
           <div className='py-10'>
             <div>
               <form
