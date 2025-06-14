@@ -6,6 +6,7 @@ import React from 'react'
 import WobbleCard from '~components/ui/wobble-card'
 import counseling from '~public/images/counseling.jpg'
 import counseling2 from '~public/images/counseling2.jpg'
+import innovationAward from '~public/images/innovation-award.png'
 import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types'
@@ -63,6 +64,7 @@ export default function Introduction({
   }
   return (
     <section className='py-20 gradient-background'>
+      <Image src={innovationAward} className='mx-auto' alt='innovation award' width={250} height={250} />
       <div className='max-w-2xl mx-auto text-white text-center pb-10 text-lg px-5'>
         {documentToReactComponents(document)}
       </div>
