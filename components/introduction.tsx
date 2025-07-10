@@ -83,7 +83,7 @@ export default function Introduction({
                     Found {matchingCounselors.length} Counselor{matchingCounselors.length !== 1 ? 's' : ''}
                   </h3>
                   <p className='text-neutral-200 text-sm'>
-                    Showing results for "{counselor}"
+                    Showing results for &quot;{counselor}&quot;
                   </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
@@ -135,7 +135,7 @@ export default function Introduction({
                     No Counselors Found
                   </h3>
                   <p className='text-neutral-300 text-sm'>
-                    No matching counselors found for "{counselor}". Try searching with a different name or check your spelling.
+                    No matching counselors found for &quot;{counselor}&quot;. Try searching with a different name or check your spelling.
                   </p>
                 </div>
               </div>
