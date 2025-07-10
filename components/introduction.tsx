@@ -77,17 +77,67 @@ export default function Introduction({
         {showResults && (
           <>
             {matchingCounselors.length > 0 ? (
-              <div className='text-center mt-10'>
-                {matchingCounselors.map((entry, i) => (
-                  <div key={i} className='text-white'>
-                    {String(entry.fields.firstName || '')} {String(entry.fields.lastName || '')} –{' '}
-                    {String(entry.fields.city || '')}, {String(entry.fields.country || '')}
-                  </div>
-                ))}
+              <div className='max-w-4xl mx-auto mt-10'>
+                <div className='text-center mb-6'>
+                  <h3 className='text-2xl font-semibold text-white mb-2'>
+                    Found {matchingCounselors.length} Counselor{matchingCounselors.length !== 1 ? 's' : ''}
+                  </h3>
+                  <p className='text-neutral-200 text-sm'>
+                    Showing results for "{counselor}"
+                  </p>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                  {matchingCounselors.map((entry, i) => (
+                    <div
+                      key={i}
+                      className='bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105'
+                    >
+                      <div className='flex items-center justify-between mb-3'>
+                        <div className='w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center'>
+                          <svg className='w-6 h-6 text-teal-300' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' />
+                          </svg>
+                        </div>
+                        <span className='px-3 py-1 bg-teal-600/30 text-teal-200 text-xs font-medium rounded-full border border-teal-500/30'>
+                          {String(entry.fields.membershipLevel || 'Member')}
+                        </span>
+                      </div>
+                      <h4 className='text-lg font-semibold text-white mb-1'>
+                        {String(entry.fields.firstName || '')} {String(entry.fields.lastName || '')}
+                      </h4>
+                      {entry.fields.specialization && (
+                        <p className='text-neutral-300 text-sm mb-3'>
+                          {String(entry.fields.specialization)}
+                        </p>
+                      )}
+                      {entry.fields.location && (
+                        <div className='flex items-center text-neutral-300 text-sm'>
+                          <svg className='w-4 h-4 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z' />
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 11a3 3 0 11-6 0 3 3 0 016 0z' />
+                          </svg>
+                          {String(entry.fields.location)}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ) : (
-              <div className='text-white text-center mt-10'>
-                No matching counselors found.
+              <div className='text-center mt-10'>
+                <div className='bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 max-w-md mx-auto'>
+                  <div className='w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <svg className='w-8 h-8 text-red-300' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33' />
+                    </svg>
+                  </div>
+                  <h3 className='text-xl font-semibold text-white mb-2'>
+                    No Counselors Found
+                  </h3>
+                  <p className='text-neutral-300 text-sm'>
+                    No matching counselors found for "{counselor}". Try searching with a different name or check your spelling.
+                  </p>
+                </div>
               </div>
             )}
           </>
