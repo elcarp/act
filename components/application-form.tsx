@@ -41,7 +41,7 @@ export function ApplicationForm() {
           <div className='py-10'>
             <div>
               <form
-                action='https://public.herotofu.com/v1/cb9dd370-f976-11ef-896c-cb89bf5fb2e4'
+                action='https://public.herotofu.com/v1/97949cc0-aa75-11f0-a72d-cfd53f2c1510'
                 method='POST'
                 className='space-y-4'>
                 <label htmlFor='name' className='block text-sm font-medium'>
