@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
 import nodemailer from 'nodemailer'
-
-const prisma = new PrismaClient()
 
 export async function POST(req: Request) {
   try {
@@ -21,16 +18,6 @@ export async function POST(req: Request) {
 
     // Ensure membership is always a string (even if empty)
     const membershipValue = membership ? membership.toString() : ''
-
-    // Save to database
-    await prisma.contact.create({
-      data: {
-        name,
-        email,
-        membership: membershipValue,
-        message,
-      },
-    })
 
     // Validate email credentials
     if (
@@ -74,7 +61,7 @@ export async function POST(req: Request) {
     console.log('✅ Email sent successfully!')
 
     return NextResponse.json(
-      { success: true, message: 'Message saved and email notification sent!' },
+      { success: true, message: 'Email notification sent!' },
       { status: 200 }
     )
   } catch (error) {

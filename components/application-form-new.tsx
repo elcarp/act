@@ -39,15 +39,15 @@ export function ApplicationForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          membership: formData.membership.join(", "), // Convert array to string for Prisma storage
+          membership: formData.membership.join(", "),
         }),
       });
 
       if (res.ok) {
-        setStatus("Message saved!");
+        setStatus("Message sent!");
         setFormData({ name: "", email: "", membership: [], message: "" });
       } else {
-        setStatus("Failed to save. Try again.");
+        setStatus("Failed to send. Try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
