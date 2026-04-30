@@ -34,9 +34,9 @@ export function ApplicationForm() {
 
   if (!dict) return null
 
-  const disabledFieldClass =
-    'disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500 disabled:opacity-75 disabled:placeholder:text-gray-400 disabled:shadow-none'
-  const fieldLabelClass = 'block text-sm font-medium text-gray-600'
+  const inputFieldClass =
+    'block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black/15'
+  const fieldLabelClass = 'block text-sm font-medium text-gray-900'
 
   return (
     <div className='bg-gray-100 w-full flex items-center justify-center'>
@@ -56,9 +56,8 @@ export function ApplicationForm() {
                   name='name'
                   type='text'
                   required
-                  disabled
                   placeholder='Your full name here'
-                  className={`block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input ${disabledFieldClass}`}
+                  className={inputFieldClass}
                 />
 
                 <label htmlFor='email' className={fieldLabelClass}>
@@ -69,9 +68,8 @@ export function ApplicationForm() {
                   name='email'
                   type='email'
                   required
-                  disabled
                   placeholder='hello@johndoe.com'
-                  className={`block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input ${disabledFieldClass}`}
+                  className={inputFieldClass}
                 />
 
                 <label className={fieldLabelClass}>
@@ -89,15 +87,14 @@ export function ApplicationForm() {
                   ].map((option) => (
                     <label
                       key={option.value}
-                      className='flex items-center space-x-2 text-sm text-gray-600 cursor-not-allowed select-none'>
+                      className='flex items-center space-x-2 text-sm text-gray-900 cursor-pointer'>
                       <input
                         type='checkbox'
                         name='membership'
                         value={option.value}
-                        disabled
-                        className='form-checkbox disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-300'
+                        className='form-checkbox rounded border-gray-300 text-black focus:ring-black/20'
                       />
-                      <span className='text-gray-500'>{option.label}</span>
+                      <span>{option.label}</span>
                     </label>
                   ))}
                 </div>
@@ -111,14 +108,12 @@ export function ApplicationForm() {
                   rows={5}
                   id='message'
                   name='message'
-                  disabled
                   placeholder='Enter your message here'
-                  className={`block w-full bg-white px-4 rounded-md border-0 py-1.5 shadow-input resize-none ${disabledFieldClass}`}
+                  className={`${inputFieldClass} resize-y min-h-[120px]`}
                 />
 
                 <input
                   type='submit'
-                  disabled
                   value='Submit'
                   className='bg-black hover:bg-black/90 text-white text-sm font-medium rounded-full px-4 py-2 w-full disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-200 disabled:hover:bg-gray-400'
                 />
