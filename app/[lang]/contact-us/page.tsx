@@ -14,10 +14,38 @@ export default function ContactUs() {
   return (
     <>
       <section className='bg-slate-100 flex items-center justify-center h-screen'>
-        <div>
-          {locale == 'th-TH'
-            ? 'หากคุณมีคำถามหรือข้อเสนอแนะ กรุณาติดต่อเราผ่านช่องทางโซเชียลมีเดียของเรา'
-            : 'If you have any questions or comments, please contact us via oursocial media channels.'}
+        <div className='max-w-xl px-4 text-center'>
+          {locale == 'th-TH' ? (
+            <>
+              <p>
+                หากมีข้อสงสัยเฉพาะหรือต้องการติดต่อโดยตรง กรุณาติดต่อ ACT ที่{' '}
+                <a
+                  href='mailto:actcounselors.info@gmail.com'
+                  className='underline underline-offset-2'>
+                  actcounselors.info@gmail.com
+                </a>
+              </p>
+              <p className='mt-4'>
+                ข้อมูลทั่วไปสามารถติดตามได้ที่ช่องทางโซเชียลมีเดียของเรา
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                For direct or specific inquiries, please contact ACT at{' '}
+                <a
+                  href='mailto:actcounselors.info@gmail.com'
+                  className='underline underline-offset-2'>
+                  actcounselors.info@gmail.com
+                </a>
+                .
+              </p>
+              <p className='mt-4'>
+                General information is also available at our social media
+                channels.
+              </p>
+            </>
+          )}
           <p className='text-center flex justify-center mt-10'>
             <Link
               href='https://www.facebook.com/share/15mtxxa6gg/?mibextid=wwXIfr'
